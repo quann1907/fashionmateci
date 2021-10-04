@@ -7,18 +7,11 @@ class Order extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Order_model');
-		// if (!$this->session->userdata('user'))
-  //       { 
-  //           redirect('admin/Order');
-  //       }
 	}
 
 	public function index()
 	{
 		$data['order'] = $this->Order_model->load_order();
-		// echo "<pre>";
-		// var_dump($data);
-		// echo "<pre>";
 		$this->load->view('backend/order', $data);
 	}
 

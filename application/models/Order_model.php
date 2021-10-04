@@ -11,8 +11,12 @@ class Order_model extends CI_Model {
 	}
 
 	function change_status($id, $status){
-		$this->db->update('tbl_order', array('status' => $status));
+		$this->db->set('status', $status);
 		$this->db->where('id', $id);
+		$this->db->update('tbl_order');
+		// $this->db->update('tbl_order', array('status' => $status));
+		// $this->db->where('id', $id);
+		// print_r($this->db->last_query());
 	}
 }
 
