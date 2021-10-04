@@ -11,11 +11,12 @@
 	<link href="<?= base_url() ?>dist/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<!-- <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet"> -->
 	<?php
-		include 'components/sidebar.php';
-		include 'components/nav-header.php';
-		include 'components/chatbox.php';
-		include 'components/header.php';
-		include 'components/lib.php';
+		include 'lib.php';
+		include 'sidebar.php';
+		include 'nav-header.php';
+		include 'chatbox.php';
+		include 'header.php';
+		include 'lib.php';
 	?>
 
 </head>
