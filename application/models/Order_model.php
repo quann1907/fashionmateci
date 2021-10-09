@@ -14,9 +14,13 @@ class Order_model extends CI_Model {
 		$this->db->set('status', $status);
 		$this->db->where('id', $id);
 		$this->db->update('tbl_order');
-		// $this->db->update('tbl_order', array('status' => $status));
-		// $this->db->where('id', $id);
-		// print_r($this->db->last_query());
+	}
+
+	public function count_pending_order()
+	{
+		$this->db->where('status', 0);
+		$query = $this->db->get('tbl_order')->result_array();
+		return count($query);
 	}
 }
 

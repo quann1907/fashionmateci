@@ -17,7 +17,7 @@ class Order extends CI_Controller {
 
 	public function change_status($id, $status)
 	{
-		$this->Order_model->change_status($id,$status);
+		$this->Order_model->change_status($id, $status);
 		return redirect('admin/order');
 	}
 }

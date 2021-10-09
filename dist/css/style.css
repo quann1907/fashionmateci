@@ -238,6 +238,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --danger: #F46B68;
   --light: #D1D1D1;
   --dark: #3e4954;
+  --custom-yellow: #FCBF49;
+  --custom-red: #e07a5f;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -5294,6 +5296,12 @@ button.bg-dark:focus {
 
 .bg-transparent {
   background-color: transparent !important; }
+
+.bg-custom-yellow {
+  background-color: #FCBF49 !important; }
+
+.bg-custom-red {
+  background-color: #e07a5f !important; }
 
 .border {
   border: 1px solid #EEEEEE !important; }
