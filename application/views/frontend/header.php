@@ -76,11 +76,11 @@
     </div><div class="mainmenu">
         <nav id="h-menu" class="h-menu">
             <ul>
-                <li class="menu-item-has-children active">
-                    <a href="index.html">Trang chủ</a>
+                <li class="active">
+                    <a href="<?= base_url() ?>">Trang chủ</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="<?=base_url()?>Product">Bộ sưu tập</a>
+                    <a href="<?= base_url() ?>Product">Bộ sưu tập</a>
                     <ul class="sub-menu">
                         <?php
                             $this->load->view('frontend/category_menu');

@@ -11,6 +11,7 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->view('backend/login');
+		$data['user'] = $this->User_model->getUser();
+		$this->load->view('backend/user', $data);
 	}
 }

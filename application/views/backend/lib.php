@@ -8,9 +8,3 @@
 <script src="<?= base_url() ?>dist/js/custom.min.js"></script>
 <script src="<?= base_url() ?>dist/js/deznav-init.js"></script>
 <script src="<?= base_url() ?>dist/vendor/owl-carousel/owl.carousel.js"></script>
-
-<!-- Apex Chart -->
-<script src="<?= base_url() ?>dist/vendor/apexchart/apexchart.js"></script>
-
-<!-- Dashboard 1 -->
-<script src="<?= base_url() ?>dist/js/dashboard/dashboard-1.js"></script>

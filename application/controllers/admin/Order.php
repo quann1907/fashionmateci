@@ -11,13 +11,13 @@ class Order extends CI_Controller {
 
 	public function index()
 	{
-		$data['order'] = $this->Order_model->load_order();
+		$data['order'] = $this->Order_model->getOrder();
 		$this->load->view('backend/order', $data);
 	}
 
-	public function change_status($id, $status)
+	public function changeStatus($id, $status)
 	{
-		$this->Order_model->change_status($id, $status);
+		$this->Order_model->changeStatus($id, $status);
 		return redirect('admin/order');
 	}
 }

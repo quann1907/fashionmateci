@@ -5,7 +5,8 @@ class Customer_model extends CI_Model {
 
 	public function getCustomer()
 	{
-		return $this->db->get('tbl_customer');
+		$this->db->select('fullname, username, gender, phone, email, point, dateCreate, status');
+		return $this->db->get('tbl_customer')->result_array();
 	}
 
 	public function count_customer()

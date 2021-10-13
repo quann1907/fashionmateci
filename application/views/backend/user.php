@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Đơn hàng</title>
+    <title>Nhân viên</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <!-- Datatable -->
+    <link href="<?= base_url() ?>dist/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="<?= base_url() ?>dist/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>dist/css/style.css" rel="stylesheet">
+    <link href="<?=base_url() ?>dist/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,6 +28,7 @@
 
     <!--********************************** Main wrapper start ***********************************-->
     <div id="main-wrapper">
+
         <!--********************************** Nav header start ***********************************-->
         <?php include 'nav-header.php'; ?>
         <!--********************************** Nav header end ***********************************-->
@@ -46,60 +49,70 @@
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Đơn hàng</h4>
+                                <h4 class="card-title">Nhân viên</h4>
+                                <button type="button" class="btn light btn-primary">Thêm mới</button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-responsive-md">
+                                    <table id="example3" class="display min-w850">
                                         <thead>
                                             <tr>
-                                                <th class="width80"><strong>ID</strong></th>
-                                                <th><strong>Tên khách hàng</strong></th>
-                                                <th><strong>Ngày đặt hàng</strong></th>
-                                                <th><strong>Tổng số tiền</strong></th>
-                                                <th><strong>Ngày giao hàng dự kiến</strong></th>
-                                                <th><strong>Trạng thái</strong></th>
-                                                <th><strong>Ghi chú</strong></th>
-                                                <th><strong>Tác vụ</strong></th>
                                                 <th></th>
+                                                <th>Họ tên</th>
+                                                <th>Chức vụ</th>
+                                                <th>Giới tính</th>
+                                                <th>Điện thoại</th>
+                                                <th>Email</th>
+                                                <th>Ngày bắt đầu</th>
+                                                <th>Status</th>
+                                                <th>Tác vụ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($order as $value): ?>
+                                            <?php foreach ($user as $value): ?>
                                                 <tr>
-                                                    <td><strong><?= $value['id'] ?></strong></td>
+                                                    <td><img class="rounded-circle" width="35" src="<?= base_url() ?><?= $value['image'] ?>" alt=""></td>
                                                     <td><?= $value['fullname'] ?></td>
-                                                    <td><?= $value['orderDate'] ?></td>
-                                                    <td><?= $value['money'] ?></td>
-                                                    <td><?= $value['estimateDeliveryDate'] ?></td>
-                                                    <?php
-                                                    if ($value['status'] == 0){
-                                                        echo '<td><span class="badge light badge-warning">Chờ xác nhận..</span></td>';
+                                                    <?php if($value['role'] == 1){ 
+                                                        echo '<td>Quản trị viên</td>';
                                                     }
-                                                    elseif ($value['status'] == 1){
-                                                        echo '<td><span class="badge light badge-success">Đặt hàng thành công</span></td>';
+                                                    elseif($value['role'] == 2){
+                                                        echo '<td>Quản lý</td>';  
                                                     }
-                                                    elseif ($value['status'] == 2){
-                                                        echo '<td><span class="badge light badge-danger">Đơn hàng huỷ</span></td>';
+                                                    elseif($value['role'] == 3){
+                                                        echo '<td>Nhân viên</td>';  
                                                     }
-                                                    else {
-                                                        echo '<td><span class="badge light badge-danger">Lỗi</span></td>';
+                                                    else{
+                                                        echo'<td>Lỗi</td>';
                                                     }
                                                     ?>
-                                                    <td><?= $value['note'] ?></td>
+                                                    <?php if($value['gender'] == 0){ 
+                                                        echo '<td>Nữ</td>';
+                                                    }
+                                                    elseif($value['gender'] == 1){
+                                                        echo '<td>Nam</td>';  
+                                                    }
+                                                    else{
+                                                        echo'<td>Lỗi</td>';
+                                                    }
+                                                    ?>
+                                                    <td><a href="javascript:void(0);"><strong><?= $value['phone'] ?></strong></a></td>
+                                                    <td><a href="javascript:void(0);"><strong><?= $value['email'] ?></strong></a></td>
+                                                    <td><?= $value['dateCreate'] ?></td>
+                                                    <?php if($value['status'] == 1) {
+                                                        echo '<td><span class="badge light badge-success">Hoạt động</span></td>';
+                                                    }
+                                                    elseif($value['status'] == 0) {
+                                                        echo '<td><span class="badge light badge-danger">Không hoạt động</span></td>';
+                                                    }
+                                                    ?>
                                                     <td>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
-                                                                <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item btn <?= ($value['status']==1)?'disabled':'';?>" href="<?= base_url()?>admin/Order/changeStatus/<?= $value['id'] ?>/1">Chấp nhận đặt hàng</a>
-                                                                <a class="dropdown-item btn <?= ($value['status']==2)?'disabled':'';?>" href="<?= base_url()?>admin/Order/changeStatus/<?= $value['id'] ?>/2">Huỷ đơn hàng</a>
-                                                                <a class="dropdown-item btn" href="">Chi tiết đặt hàng</a>
-                                                            </div>
+                                                        <div class="d-flex">
+                                                            <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -128,5 +141,9 @@
     <script src="<?= base_url() ?>dist/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>dist/js/custom.min.js"></script>
     <script src="<?= base_url() ?>dist/js/deznav-init.js"></script>
+
+    <!-- Datatable -->
+    <script src="<?= base_url() ?>dist/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>dist/js/plugins-init/datatables.init.js"></script>
 </body>
 </html>

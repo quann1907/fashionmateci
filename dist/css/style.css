@@ -24740,8 +24740,7 @@ button {
   .card-title {
     font-size: 20px;
     font-weight: 500;
-    color: #000;
-    text-transform: capitalize; }
+    color: #000; }
     .card-title--large {
       font-size: 1.5rem; }
     .card-title--medium {
@@ -26729,10 +26728,7 @@ table.dataTable.patient-list tbody tr:hover {
   background: #fff; }
 
 table.dataTable thead th {
-  color: #000;
-  font-size: 16px;
-  text-transform: capitalize;
-  white-space: nowrap;
+  color: #3e4954;
   font-weight: 600; }
   [data-theme-version="dark"] table.dataTable thead th {
     color: #fff; }
