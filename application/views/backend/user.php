@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Nhân viên</title>
+    <title>Fashionmate - Nhân viên</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Datatable -->
@@ -53,7 +53,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Nhân viên</h4>
-                                <button type="button" class="btn light btn-primary">Thêm mới</button>
+                                <a href="<?php base_url() ?>User/loadAddUser"><button type="button" class="btn light btn-primary">Thêm mới</button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -106,13 +106,22 @@
                                                         echo '<td><span class="badge light badge-success">Hoạt động</span></td>';
                                                     }
                                                     elseif($value['status'] == 0) {
-                                                        echo '<td><span class="badge light badge-danger">Không hoạt động</span></td>';
+                                                        echo '<td><span class="badge light badge-danger">Đóng băng</span></td>';
+                                                    }
+                                                    else {
+                                                        echo '<td><span class="badge light badge-warning">Lỗi</span></td>';
                                                     }
                                                     ?>
                                                     <td>
-                                                        <div class="d-flex">
-                                                            <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
+                                                                <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item btn <?= ($value['status']==1)?'disabled':'';?>" href="<?= base_url()?>admin/User/changeStatus/<?= $value['id'] ?>/1">Kích hoạt động</a>
+                                                                <a class="dropdown-item btn <?= ($value['status']==0)?'disabled':'';?>" href="<?= base_url()?>admin/User/changeStatus/<?= $value['id'] ?>/0">Ngừng hoạt động</a>
+                                                                <a class="dropdown-item btn" href="<?= base_url() ?>admin/User/loadEditUser/<?= $value['id'] ?>">Cập nhật thông tin nhân viên</a>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>

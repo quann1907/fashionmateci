@@ -6,8 +6,6 @@ class Dashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('session');
-		$this->load->library('form_validation');
 		$this->load->model('Product_model');
 		$this->load->model('User_model');
 		$this->load->model('Order_model');

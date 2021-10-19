@@ -86,15 +86,21 @@
                                                     <?php if ($value['status'] == 1) { ?>
                                                         <td><span class="badge light badge-success">Hoạt động</span></td>
                                                     <?php } elseif ($value['status'] == 0) { ?>
-                                                        <td><span class="badge light badge-danger">Không hoạt động</span></td>
+                                                        <td><span class="badge light badge-danger">Ngừng kinh doanh</span></td>
                                                     <?php } else { ?>
                                                         <td><span class="badge light badge-danger">Lỗi</span></td>
                                                     <?php }?>
                                                     <td><?= $value['note'] ?></td>
                                                     <td>
-                                                        <div class="d-flex">
-                                                            <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
+                                                                <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item btn <?= ($value['status']==1)?'disabled':'';?>" href="<?= base_url()?>admin/ProductDetail/changeStatus/<?= $value['id'] ?>/1">Kích hoạt động</a>
+                                                                <a class="dropdown-item btn <?= ($value['status']==0)?'disabled':'';?>" href="<?= base_url()?>admin/ProductDetail/changeStatus/<?= $value['id'] ?>/0">Ngừng kinh doanh</a>
+                                                                <a class="dropdown-item btn" href="<?= base_url() ?>admin/ProductDetail/loadEditProductDetail/<?= $value['id'] ?>">Cập nhật dữ liệu sản phẩm</a>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                 </tr>

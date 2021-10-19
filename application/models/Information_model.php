@@ -13,7 +13,7 @@ class Information_model extends CI_Model {
 		 	return $value['content'];
 		} 
 	}
-
+	
 }
 
 /* End of file Infomation_model.php */

@@ -13,8 +13,13 @@ class Category extends CI_Controller {
 	{
 		$data['category'] = $this->Category_model->getCategory();
 		$this->load->view('backend/category', $data);
-
 	}
+
+	public function loadAddCategory()
+	{
+		$this->load->view('backend/add-category');
+	}
+
 }
 
 /* End of file Category.php */

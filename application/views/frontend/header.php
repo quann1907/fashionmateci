@@ -8,12 +8,6 @@
         </form>
         <ul class="h-shop-links">
             <li class="h-search-btn" id="h-search-btn"><i class="ion-search"></i></li>
-            <li class="h-shop-icon h-wishlist">
-                <a title="Wishlist" href="wishlist.html">
-                    <i class="ion-heart"></i>
-                    <span>5</span>
-                </a>
-            </li>
             <li class="h-shop-icon h-profile">
                 <a href="auth.html" title="My Account">
                     <i class="ion-android-person"></i>
@@ -26,42 +20,27 @@
                 </ul>
             </li>
             <li class="h-cart">
-                <a class="cart-contents" href="cart.html">
+                <a class="cart-contents" href="<?= base_url()?>Product/loadCart">
                     <p class="h-cart-icon">
                         <i class="ion-android-cart"></i>
-                        <span>3</span>
+                        <span><?= $this->cart->total_items() ?></span>
                     </p>
-                    <p class="h-cart-total">$510.00</p>
                 </a>
                 <div class="widget_shopping_cart">
                     <div class="widget_shopping_cart_content">
                         <ul class="cart_list">
-                            <li>
-                                <a href="#" class="remove">×</a>
-                                <a href="#">
-                                    <img src="img/1/other/cart1.jpg" alt="">
-                                    Pneumatic Coil Hose
-                                </a>
-                                <span class="quantity">1 × $180.00</span>
-                            </li>
-                            <li>
-                                <a href="#" class="remove">×</a>
-                                <a href="#">
-                                    <img src="img/1/other/cart2.jpg" alt="">
-                                    Drill Tool Kit
-                                </a>
-                                <span class="quantity">1 × $115.00</span>
-                            </li>
-                            <li>
-                                <a href="#" class="remove">×</a>
-                                <a href="#">
-                                    <img src="img/1/other/cart3.jpg" alt="">
-                                    Searchlight Portable
-                                </a>
-                                <span class="quantity">1 × $150.00</span>
-                            </li>
+                            <?php foreach ($this->cart->contents() as $value): ?>
+                                <li>
+                                    <a href="<?= base_url()?>Product/removeProductFromCart/<?= $value['rowid']?>" class="remove">×</a>
+                                    <a href="#">
+                                        <img src="<?= base_url()?><?=$value['options']['image'] ?>" alt="" width="32px" height="21px">
+                                        <?= $value['name'] ?>
+                                    </a>
+                                    <span class="quantity"><?=$value['qty']?>× <?= number_format($value['price'], 0, ',', '.')?> VNĐ</span>
+                                </li>
+                            <?php endforeach ?>
                         </ul>
-                        <p class="total"><b>Subtotal:</b> $510.00</p>
+                        <p class="total"><b>Subtotal:</b> <?= number_format($this->cart->total()) ?> VNĐ</p>
                         <p class="buttons">
                             <a href="cart.html" class="button">View cart</a>
                             <a href="checkout.html" class="button">Checkout</a>
@@ -83,7 +62,7 @@
                     <a href="<?= base_url() ?>Product">Bộ sưu tập</a>
                     <ul class="sub-menu">
                         <?php
-                            $this->load->view('frontend/category_menu');
+                        $this->load->view('frontend/category_menu');
                         ?>
                     </ul>
                 </li>

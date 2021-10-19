@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
         <meta charset="UTF-8">
-        <title>MultiShop - eCommerce HTML Template</title>
+        <title>Fashionmate - Sản phẩm</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="format-detection" content="telephone=no">
@@ -30,20 +30,6 @@
                                     <li>Catalog - Gallery</li>
                                 </ul>
                                 <div class="section-top-sort">
-                                    <div class="section-view">
-                                        <p>View</p>
-                                        <div class="dropdown-wrap">
-                                            <p class="dropdown-title section-view-ttl">Gallery</p>
-                                            <ul class="dropdown-list">
-                                                <li>
-                                                    <a href="catalog-list.html">List</a>
-                                                </li>
-                                                <li class="active">
-                                                    <a href="catalog-gallery.html">Gallery</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                     <div class="section-sort">
                                         <p>Sort</p>
                                         <div class="dropdown-wrap">
@@ -79,68 +65,53 @@
                                 </div>
                             </div>
 
-
-    <!--
-    Gallery Item Columns:
-
-    With Sidebar:
-    prod-items-4 : cf-sm-6 cf-md-6 cf-lg-3 col-xs-6 col-sm-6 col-md-6 col-lg-3
-    prod-items-3 : cf-sm-6 cf-md-6 cf-lg-4 col-xs-6 col-sm-6 col-md-6 col-lg-4
-
-    Without Sidebar:
-    prod-items-4 : cf-sm-6 cf-md-4 cf-lg-3 col-xs-6 col-sm-6 col-md-4 col-lg-3
-    prod-items-3 : cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4
-
-    For Both:
-    prod-items-2 : cf-sm-6 cf-md-6 cf-lg-6 col-xs-6 col-sm-6 col-md-6 col-lg-6
-    prod-items-1 : col-lg-12
--->
-<div class="row prod-items prod-items-3">
-    <?php foreach($product as $value): ?>
-        <article class="cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 sectgl-item">
-            <div class="sectgl prod-i">
-                <div class="prod-i-top">
-                    <a class="prod-i-img" href="product.html">
-                        <img src="<?= base_url() ?><?= $value['image']?>" alt="">
-                    </a>
-                    <div class="prod-i-actions">
-                        <div class="prod-i-actions-in">
-                            <div class="prod-li-favorites">
-                                <a href="wishlist.html" class="hover-label add_to_wishlist"><i class="icon ion-heart"></i><span>Add to Wishlist</span></a>
+                            <div class="row prod-items prod-items-3">
+                                <?php foreach($product as $value): ?>
+                                    <article class="cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 sectgl-item">
+                                        <div class="sectgl prod-i">
+                                            <div class="prod-i-top">
+                                                <a class="prod-i-img" href="product.html">
+                                                    <img src="<?= base_url() ?><?= $value['image']?>" alt="">
+                                                </a>
+                                                <div class="prod-i-actions">
+                                                    <div class="prod-i-actions-in">
+                                                        <p class="prod-quickview">
+                                                            <a href="#" class="hover-label quick-view"><i class="icon ion-plus"></i><span>Chi tiết sản phẩm</span></a>
+                                                        </p>
+                                                        <p class="prod-i-cart">
+                                                            <a href="<?= base_url() ?>Product/addProductToCart/<?=$value['id']?>/1" class="hover-label prod-addbtn"><i class="icon ion-android-cart"></i><span>Thêm vào giỏ hàng</span></a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="prod-i-bot">
+                                                <div class="prod-i-info">
+                                                    <?php if($value['sale'] == 0){ ?>
+                                                        <p class="prod-i-price"><?= number_format($value['price'], 0, ',', '.') ?> VNĐ</p>
+                                                    <?php } else { ?>
+                                                        <p class="prod-i-price"><?= number_format($value['sale'], 0, ',', '.') ?> VNĐ<del style="margin-left: 15px;"><?= number_format($value['price'], 0, ',', '.') ?> VNĐ</del></p>
+                                                    <?php } ?>
+                                                    <p class="prod-i-categ"><a href=""><?= $value['b'] ?></a></p>
+                                                </div>
+                                                <h3 class="prod-i-ttl"><a href=""><?= $value['a'] ?></a></h3>
+                                            </div>
+                                        </div>
+                                    </article>
+                                <?php endforeach ?>
                             </div>
-                            <p class="prod-quickview">
-                                <a href="#" class="hover-label quick-view"><i class="icon ion-plus"></i><span>Quick View</span></a>
-                            </p>
-                            <p class="prod-i-cart">
-                                <a href="#" class="hover-label prod-addbtn"><i class="icon ion-android-cart"></i><span>Add to Cart</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="prod-i-bot">
-                    <div class="prod-i-info">
-                        <p class="prod-i-price"><?= $value['price'] ?> VNĐ</p>
-                        <p class="prod-i-categ"><a href=""><?= $value['b'] ?></a></p>
-                    </div>
-                    <h3 class="prod-i-ttl"><a href=""><?= $value['a'] ?></a></h3>
-                </div>
-            </div>
-        </article>
-    <?php endforeach ?>
-</div>
-<ul class="page-numbers">
-    <?php
-    $uri = $_SERVER['REQUEST_URI'];
-    $uri = explode('/', $uri);
-    $end = end($uri);
-    ?>
-    <?php for ($i = 1;$i <= $numberOfPage;$i++) { ?>
-        <?php if ($i == $end) { ?>
-            <li><span class="page-numbers current"><?= $i ?></span></li>
-        <?php } else { ?>
-            <li><a class="page-numbers" href = "<?= base_url() ?>Product/page/<?= $i ?>"><?= $i ?></a></li>
-        <?php }
-    } ?>
+                            <ul class="page-numbers">
+                                <?php
+                                $uri = $_SERVER['REQUEST_URI'];
+                                $uri = explode('/', $uri);
+                                $end = end($uri);
+                                ?>
+                                <?php for ($i = 1;$i <= $numberOfPage;$i++) { ?>
+                                    <?php if ($i == $end) { ?>
+                                        <li><span class="page-numbers current"><?= $i ?></span></li>
+                                    <?php } else { ?>
+                                        <li><a class="page-numbers" href = "<?= base_url() ?>Product/page/<?= $i ?>"><?= $i ?></a></li>
+                                    <?php }
+                                } ?>
     <!-- <li><span class="page-numbers current">1</span></li>
     <li><a class="page-numbers" href="#">2</a></li>
     <li><a class="page-numbers" href="#">3</a></li>

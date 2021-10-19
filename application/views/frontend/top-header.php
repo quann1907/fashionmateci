@@ -4,28 +4,28 @@
             <ul class="links_list links_list-align-left align-center-desktop topbar-social">
                 <li>
                     <p class="links_list-value">
-                        <a href="#" rel="nofollow">
+                        <a rel="nofollow">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </p>
                 </li>
                 <li>
                     <p class="links_list-value">
-                        <a href="#" rel="nofollow">
+                        <a rel="nofollow">
                             <i class="fa fa-youtube-play"></i>
                         </a>
                     </p>
                 </li>
                 <li>
                     <p class="links_list-value">
-                        <a href="#" rel="nofollow">
+                        <a rel="nofollow">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </p>
                 </li>
                 <li>
                     <p class="links_list-value">
-                        <a href="#" rel="nofollow">
+                        <a rel="nofollow">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </p>

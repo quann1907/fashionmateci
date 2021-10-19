@@ -5,7 +5,7 @@ class Product_model extends CI_Model {
 
 	public function getProductClient()
 	{
-		$this->db->select('tbl_product.name as a, tbl_category.name as b, image, price');
+		$this->db->select('tbl_product.name as a, tbl_category.name as b, image, price, sale');
 		$this->db->where('tbl_product.status', 1);
 		$this->db->where('tbl_category.status', 1);
 		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
@@ -16,7 +16,7 @@ class Product_model extends CI_Model {
 	public function getNewProduct()
 	{
 		$quantity = 6;
-		$this->db->select('tbl_product.name as a, tbl_category.name as b, image, price');
+		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price');
 		$this->db->where('tbl_product.status', 1);
 		$this->db->where('tbl_category.status', 1);
 		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
@@ -43,14 +43,17 @@ class Product_model extends CI_Model {
 
 	public function changeStatus($id, $status)
 	{
-		$this->db->set('status', $status);
+		$this->db->where('tbl_product.id', $id);
+		$this->db->set('tbl_product.status', $status);
 		$this->db->update('tbl_product');
-		$this->db->where('id', $id);
+
+		$this->db->where('tbl_productdetail.idProduct', $id);
+		$this->db->set('tbl_productdetail.status', $status);
+		$this->db->update('tbl_productdetail');
 	}
 
 	public function numberOfPage($productPerPage)
 	{
-		$this->db->select('*');
 		$this->db->join('tbl_category', 'tbl_category.id = tbl_product.idCategory');
 		$this->db->where('tbl_product.status', 1);
 		$this->db->where('tbl_category.status', 1);
@@ -61,7 +64,7 @@ class Product_model extends CI_Model {
 
 	public function productByPage($page, $productPerPage)
 	{
-		$this->db->select('tbl_product.name as a, tbl_category.name as b, image, price');
+		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
 		$this->db->join('tbl_category', 'tbl_category.id = tbl_product.idCategory');
 		$this->db->where('tbl_product.status', 1);
 		$this->db->where('tbl_category.status', 1);
@@ -71,12 +74,23 @@ class Product_model extends CI_Model {
 
 	public function getProductDetail()
 	{
-		$this->db->select('tbl_product.name as nameProduct, tbl_category.name as nameCategory, tbl_color.name as color, tbl_size.size as size, tbl_product.price as price, tbl_productdetail.quantity as quantity, tbl_productdetail.status as status, tbl_productdetail.note as note');
+		$this->db->select('tbl_productdetail.id, tbl_product.name as nameProduct, tbl_category.name as nameCategory, tbl_color.name as color, tbl_size.size as size, tbl_product.price as price, tbl_productdetail.quantity as quantity, tbl_productdetail.status as status, tbl_productdetail.note as note');
 		$this->db->join('tbl_color', 'tbl_productdetail.idColor = tbl_color.id');
 		$this->db->join('tbl_size', 'tbl_productdetail.idSize = tbl_size.id');
 		$this->db->join('tbl_product', 'tbl_productdetail.idProduct = tbl_product.id');
 		$this->db->join('tbl_category', 'tbl_category.id = tbl_product.idCategory');
 		return $this->db->get('tbl_productdetail')->result_array();
+	}
+
+	public function getProductAdmin()
+	{
+		return $this->db->get('tbl_product')->result_array();
+	}
+
+	public function getProductByID($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->get('tbl_product')->result_array();
 	}
 }
 

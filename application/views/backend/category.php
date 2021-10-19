@@ -50,7 +50,8 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Exam Toppers</h4>
+                                <h4 class="card-title">Danh mục sản phẩm</h4>
+                                <a href="<?php base_url() ?>Category/loadAddCategory"><button type="button" class="btn light btn-primary">Thêm mới</button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

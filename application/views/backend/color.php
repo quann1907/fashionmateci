@@ -59,7 +59,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Basic Datatable</h4>
+                                <h4 class="card-title">Bảng màu</h4>
+                                <a href="<?php base_url() ?>Color/loadAddColor"><button type="button" class="btn light btn-primary">Thêm mới</button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -74,16 +75,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=1 ?>
                                             <?php foreach ($color as $value): ?>
                                                 <tr>
-                                                    <td><?= $value['id'] ?></td>
+                                                    <td><?= $i++ ?></td>
                                                     <td><?= $value['name'] ?></td>
                                                     <td><?= $value['color'] ?></td>
                                                     <td><?= $value['note'] ?></td>
                                                     <td>
                                                         <div class="d-flex">
-                                                            <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                            <a href="<?php base_url() ?>Color/loadEditColor/<?= $value['id'] ?>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="<?php base_url() ?>Color/removeColor/<?= $value['id'] ?>" class="btn btn-danger shadow btn-xs sharp" onclick="return confirm('Bạn chắc chắn muốn xoá chứ?')"><i class="fa fa-trash"></i></a>
                                                         </div>                                              
                                                     </td>
                                                 </tr>

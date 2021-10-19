@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2021 at 12:52 PM
+-- Generation Time: Oct 19, 2021 at 03:20 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -117,14 +117,16 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `fullname`, `username`, `password`, `gender`, `phone`, `email`, `point`, `dateCreate`, `status`, `note`) VALUES
-(1, 'Nguyễn Mai Trang', 'trangnm', '123456', 0, '0337891239', 'trangnm@gmail.com', 0, '2021-09-10', 1, ''),
-(2, 'Nam Hải', 'vnhai328', '123456', 1, '0983823403', 'vnhai328@gmail.com', 0, '2021-09-10', 1, ''),
-(3, 'Ngọc Kiên', 'ngongockien2709', '123456', 1, '0383497564', 'ngongockien2709@gmail.com', 0, '2021-08-10', 1, ''),
-(4, 'Hoàng Long', 'longhoangnguyen20820', '123456', 1, '0839360001', 'longhoangnguyen20820@gmail.com', 0, '2021-08-10', 1, ''),
-(5, 'Nguyễn Cường', 'cuongnc', '123456', 1, '0127001113', 'cuongnc@gmail.com', 15, '2017-02-17', 0, ''),
-(6, 'Khánh Vân', 'vantk', '123456', 0, '0361005631', 'vantk@gmail.com', 35, '2021-06-12', 1, ''),
-(7, 'Bảo Khôi', 'khoilb', '123456', 1, '0147511672', 'khoilb@gmail.com', 20, '2021-07-05', 1, ''),
-(8, 'Thuỳ Dương', 'duongnt', '123456', 0, '0203383131', 'duongnt@gmail.com', 0, '2020-07-15', 0, '');
+(1, 'Nguyễn Mai Trang', 'trangnm', '123456', 0, '0337891239', 'trangnm@gmail.com', 0, '2018-09-10', 1, ''),
+(2, 'Nam Hải', 'vnhai328', '123456', 1, '0983823403', 'vnhai328@gmail.com', 0, '2019-09-10', 1, ''),
+(3, 'Ngọc Kiên', 'ngongockien2709', '123456', 1, '0383497564', 'ngongockien2709@gmail.com', 0, '2019-08-10', 1, ''),
+(4, 'Hoàng Long', 'longhoangnguyen20820', '123456', 1, '0839360001', 'longhoangnguyen20820@gmail.com', 0, '2019-08-10', 1, ''),
+(5, 'Nguyễn Cường', 'cuongnc', '123456', 1, '0127001113', 'cuongnc@gmail.com', 15, '2019-02-17', 0, ''),
+(6, 'Khánh Vân', 'vantk', '123456', 0, '0361005631', 'vantk@gmail.com', 35, '2019-06-12', 1, ''),
+(7, 'Bảo Khôi', 'khoilb', '123456', 1, '0147511672', 'khoilb@gmail.com', 20, '2019-07-05', 1, ''),
+(8, 'Thuỳ Dương', 'duongnt', '123456', 0, '0203383131', 'duongnt@gmail.com', 0, '2019-07-15', 0, ''),
+(9, 'Quỳnh Như', 'nhunq', '123456', 0, '0913468798', 'nhunq@gmail.com', 0, '2019-01-03', 1, ''),
+(10, 'Đức Hiếu', 'hieutd', '123456', 1, '0398481242', 'hieutd@gmail.com', 0, '2018-10-19', 1, '');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,8 @@ CREATE TABLE `tbl_infomation` (
 --
 
 INSERT INTO `tbl_infomation` (`id`, `type`, `content`, `status`, `note`) VALUES
-(1, 'info_header', '[{\"address\":\"54 Triều Khúc, Thanh Xuân, HN\",\n\"email\":\"hungquan6311@gmail.com\",\n\"hotline\":\"+84 902251996\"\n}]', 1, '');
+(1, 'info_header', '[{\"address\":\"54 Triều Khúc, Thanh Xuân, HN\",\n\"email\":\"hungquan6311@gmail.com\",\n\"hotline\":\"+84 902251996\"\n}]', 1, ''),
+(2, 'store', '[{\"address\":\"39 Trần Quốc Toản, Hoàn Kiếm, Hà Nội\"\n},\n{\"address\":\"67A Đội Cấn, Ba Đình, Hà Nội\"\n},\n{\"address\":\"Lầu 1, 108 Nguyễn Sỹ Sách, Tân Bình, Hồ Chí Minh\"\n},\n{\"address\":\"142-D6 Lê Lai, Quận 1, Hồ Chí Minh\"\n}]', 1, '');
 
 -- --------------------------------------------------------
 
@@ -212,63 +215,63 @@ CREATE TABLE `tbl_product` (
 
 INSERT INTO `tbl_product` (`id`, `idCategory`, `name`, `shortDesc`, `image`, `price`, `sale`, `dateCreate`, `modifyBy`, `status`, `note`) VALUES
 (1, 5, 'Basic Tee 2021', 'Áo phông cổ tròn fit trơn', 'assets\\img\\product\\basic-tee-2021.jpg', 249000, 0, '2020-10-09', 1, 1, ''),
-(2, 5, 'Wine Tee', 'Graphic oversize tee', '', 350000, 0, '2020-10-05', 1, 1, ''),
-(3, 5, 'Crew T-shirt', 'Basic oversize tee', '', 280000, 0, '2020-05-09', 1, 1, ''),
-(4, 6, 'Sammi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', '', 490000, 0, '2020-10-17', 1, 1, ''),
-(5, 6, 'Mindy shirt', 'Áo sơ mi dài tay fit cổ tàu hoạ tiết', '', 420000, 0, '2020-11-20', 1, 1, ''),
-(6, 6, 'Floral shirt 2021 v2', 'Áo sơ mi ngắn tay fit cổ đức hoạ tiết', '', 349000, 0, '2020-08-20', 1, 1, ''),
-(7, 6, 'Floral shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', '', 349000, 0, '2020-11-20', 1, 1, ''),
-(8, 6, 'Kimi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', '', 490000, 0, '2020-05-20', 1, 1, ''),
-(9, 6, 'Julian shirt', 'Áo sơ mi dài tay oversize cổ đức hoạ tiết', '', 450000, 0, '2020-09-12', 1, 1, ''),
-(10, 6, 'Velvet shirt', 'Oversize shirt', '', 450000, 0, '2020-10-01', 1, 1, ''),
-(11, 6, 'Elevis shirt', 'Fit shirt', '', 390000, 0, '2020-09-11', 1, 1, ''),
-(12, 7, 'Vicent tee', 'Áo phông polo oversize hoạ tiết', '', 290000, 0, '2020-07-23', 1, 1, ''),
-(13, 7, 'Willa polo', 'Áo phông polo oversize trơn', '', 389000, 0, '2020-12-02', 1, 1, ''),
-(14, 7, 'Wendy polo', 'Áo phông polo oversize hoạ tiết', '', 389000, 0, '2020-09-15', 1, 1, ''),
-(15, 7, 'Daily polo', 'Áo phông polo oversize trơn', '', 390000, 0, '2020-09-29', 1, 1, ''),
-(16, 7, 'Fitteed polo', 'Basic polo', '', 390000, 0, '2020-11-20', 1, 1, ''),
-(17, 8, 'Wind short', 'Quần short cạp âu', '', 389000, 0, '2020-09-17', 1, 1, ''),
-(18, 8, 'Poker short', 'Quần short cạp chun', '', 369000, 99000, '2020-09-23', 1, 1, ''),
-(19, 8, 'Vicky short', 'Quần short cạp âu', '', 369000, 99000, '2020-07-25', 1, 1, ''),
-(20, 8, 'Lee short', 'Quần short cạp chun', '', 349000, 148000, '2020-08-08', 1, 1, ''),
-(21, 8, 'Linen short', 'Quần short cạp chun', '', 349000, 209000, '2020-11-10', 1, 1, ''),
-(22, 8, 'Harvey short', 'Quần short cạp chun', '', 349000, 149000, '2020-09-19', 1, 1, ''),
-(23, 9, 'Comfort pant', 'Trousers', '', 450000, 149000, '2020-06-28', 1, 1, ''),
-(24, 9, 'Otis pant', 'Quần dài cạp âu suông', '', 450000, 270000, '2020-05-20', 1, 1, ''),
-(25, 9, 'Alvin pant', 'Quần dài cạp âu suông', '', 450000, 270000, '2020-08-05', 1, 1, ''),
-(26, 9, 'Oliver pant', 'Quần dài cạp âu suông', '', 450000, 199000, '2020-05-20', 1, 1, ''),
-(27, 9, 'Carter pant', 'Quần dài cạp âu baggy', '', 450000, 270000, '2020-10-20', 1, 1, ''),
-(28, 9, 'Baggy pant', 'Quần dài cạp chun baggy', '', 400000, 280000, '2020-09-02', 1, 1, ''),
-(29, 9, 'Ryder pant', 'Quần dài cạp chun suông', '', 450000, 225000, '2020-03-23', 1, 1, ''),
-(30, 9, 'Lincoln pant', 'Quần dài cạp âu suông', '', 450000, 270000, '2020-02-19', 1, 1, ''),
-(31, 9, 'Flex pant 2021', 'Quần dài cạp chun suông', '', 390000, 389000, '2020-11-03', 1, 1, ''),
-(32, 9, 'Hunter pant', 'Quần dài cạp chun baggy', '', 450000, 360000, '2020-02-02', 1, 1, ''),
-(33, 9, 'Gabi pant', 'Quần dài cạp âu suông', '', 450000, 315000, '2020-03-28', 1, 1, ''),
-(34, 9, 'Kaija pant', 'Sweatpant', '', 450000, 270000, '2020-08-12', 1, 1, ''),
-(35, 9, 'Soft pant', 'Sweatpant', '', 590000, 354000, '2020-09-01', 1, 0, ''),
-(36, 10, 'Chenmegan', 'Cắt gấu', '', 520000, 0, '2020-03-15', 1, 1, ''),
-(37, 10, 'Chenmegan', 'Trơn', '', 520000, 0, '2020-08-19', 1, 1, ''),
-(38, 10, 'Chenmegan', 'Rách gối', '', 520000, 0, '2020-06-20', 1, 1, ''),
-(39, 11, 'Suedue Hoodie', 'Basic hoodie', '', 490000, 343000, '2020-09-12', 1, 1, ''),
-(40, 12, 'Soft sweater', 'Basic Sweater', '', 490000, 294000, '2020-08-10', 1, 0, ''),
-(41, 3, 'Turtle neck sweater', 'Basic sweater', '', 390000, 273000, '2020-04-09', 1, 1, ''),
-(42, 12, 'Daily sweater 2020', 'Basic sweater', '', 390000, 149000, '2020-07-15', 1, 1, ''),
-(43, 12, 'Blake sweater', 'Basic sweater', '', 450000, 315000, '2020-06-29', 1, 1, ''),
-(44, 12, 'Clever sweater', 'Look sweater', '', 390000, 312000, '2020-06-26', 1, 1, ''),
-(45, 12, 'Max sweater', 'Basic sweater', '', 350000, 245000, '2020-07-31', 1, 1, ''),
-(46, 12, 'Brody sweater', 'Stripe sweater', '', 350000, 149000, '2020-04-13', 1, 1, ''),
-(47, 13, 'Kaija jacket', 'Windbreaker', '', 550000, 330000, '2020-04-20', 1, 1, ''),
-(48, 14, 'Bomber jacket 2020', 'Jacket oversize', '', 750000, 525000, '2020-10-17', 1, 1, ''),
-(49, 14, 'Enzo jacket', 'Jacket fit', '', 590000, 472000, '2020-05-24', 1, 1, ''),
-(50, 14, 'Brooks jacket', 'Jacket fit', '', 950000, 570000, '2020-07-09', 1, 1, ''),
-(51, 14, 'Raincoat jacket', 'Jacket fit', '', 890000, 534000, '2019-05-20', 1, 1, ''),
-(52, 14, 'Casmere jacket', 'Jacket fit', '', 800000, 400000, '2019-05-20', 1, 1, ''),
-(53, 14, 'Windy jacket', 'Jacket fit', '', 750000, 600000, '2019-05-20', 1, 1, ''),
-(54, 14, 'Cozy jacket', 'Jacket fit', '', 850000, 510000, '2019-05-20', 1, 1, ''),
-(55, 14, 'Tyler jacket', 'Jacket oversize', '', 690000, 483000, '2019-05-20', 1, 1, ''),
-(56, 14, 'Coby jacket', 'Jacket oversize', '', 850000, 680000, '2019-05-20', 1, 1, ''),
-(57, 15, 'Selby coat', 'Trench coat', '', 1050000, 630000, '2019-05-20', 1, 1, ''),
-(58, 15, 'Puffy jacket', 'Basic coat', '', 950000, 570000, '2019-05-20', 1, 1, '');
+(2, 5, 'Wine Tee', 'Graphic oversize tee', 'assets\\img\\product\\wine-tee.jpg', 350000, 0, '2020-10-05', 1, 1, ''),
+(3, 5, 'Crew T-shirt', 'Basic oversize tee', 'assets\\img\\product\\crew-t-shirt.jpg', 280000, 0, '2020-05-09', 1, 1, ''),
+(4, 6, 'Sammi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\sammi-shirt.jpg', 490000, 0, '2020-10-17', 1, 1, ''),
+(5, 6, 'Mindy shirt', 'Áo sơ mi dài tay fit cổ tàu hoạ tiết', 'assets\\img\\product\\mindy-shirt.jpg', 420000, 0, '2020-11-20', 1, 1, ''),
+(6, 6, 'Floral shirt 2021 v2', 'Áo sơ mi ngắn tay fit cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt-2021-v2.jpg', 349000, 0, '2020-08-20', 1, 1, ''),
+(7, 6, 'Floral shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt.jpg', 349000, 0, '2020-11-20', 1, 1, ''),
+(8, 6, 'Kimi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\kimi-shirt.jpg', 490000, 0, '2020-05-20', 1, 1, ''),
+(9, 6, 'Julian shirt', 'Áo sơ mi dài tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\julian-shirt.jpg', 450000, 0, '2020-09-12', 1, 1, ''),
+(10, 6, 'Velvet shirt', 'Oversize shirt', 'assets\\img\\product\\velvet-shirt.jpg', 450000, 0, '2020-10-01', 1, 1, ''),
+(11, 6, 'Elevis shirt', 'Fit shirt', 'assets\\img\\product\\elevis-shirt.jpg', 390000, 0, '2020-09-11', 1, 0, ''),
+(12, 7, 'Vicent tee', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\vicent-tee.jpg', 290000, 0, '2020-07-23', 1, 1, ''),
+(13, 7, 'Willa polo', 'Áo phông polo oversize trơn', 'assets\\img\\product\\willa-polo.jpg', 389000, 0, '2020-12-02', 1, 1, ''),
+(14, 7, 'Wendy polo', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\wendy-polo.jpg', 389000, 0, '2020-09-15', 1, 1, ''),
+(15, 7, 'Daily polo', 'Áo phông polo oversize trơn', 'assets\\img\\product\\daily-polo.jpg', 390000, 0, '2020-09-29', 1, 1, ''),
+(16, 7, 'Fitteed polo', 'Basic polo', 'assets\\img\\product\\fitteed-polo.jpg', 390000, 0, '2020-11-20', 1, 1, ''),
+(17, 8, 'Wind short', 'Quần short cạp âu', 'assets\\img\\product\\wind-short.jpg', 389000, 0, '2020-09-17', 1, 1, ''),
+(18, 8, 'Poker short', 'Quần short cạp chun', 'assets\\img\\product\\poker-short.jpg', 369000, 99000, '2020-09-23', 1, 1, ''),
+(19, 8, 'Vicky short', 'Quần short cạp âu', 'assets\\img\\product\\vicky-short.jpg', 369000, 99000, '2020-07-25', 1, 1, ''),
+(20, 8, 'Lee short', 'Quần short cạp chun', 'assets\\img\\product\\lee-short.jpg', 349000, 148000, '2020-08-08', 1, 0, ''),
+(21, 8, 'Linen short', 'Quần short cạp chun', 'assets\\img\\product\\linen-short.jpg', 349000, 209000, '2020-11-10', 1, 1, ''),
+(22, 8, 'Harvey short', 'Quần short cạp chun', 'assets\\img\\product\\harvey-short.jpg', 349000, 149000, '2020-09-19', 1, 1, ''),
+(23, 9, 'Comfort pant', 'Trousers', 'assets\\img\\product\\comfort-pant.jpg', 450000, 149000, '2020-06-28', 1, 1, ''),
+(24, 9, 'Otis pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\otis-pant.jpg', 450000, 270000, '2020-05-20', 1, 1, ''),
+(25, 9, 'Alvin pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\alvin-pant.jpg', 450000, 270000, '2020-08-05', 1, 1, ''),
+(26, 9, 'Oliver pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\oliver-pant.jpg', 450000, 199000, '2020-05-20', 1, 1, ''),
+(27, 9, 'Carter pant', 'Quần dài cạp âu baggy', 'assets\\img\\product\\carter-pant.jpg', 450000, 270000, '2020-10-20', 1, 1, ''),
+(28, 9, 'Baggy pant', 'Quần dài cạp chun baggy', 'assets\\img\\product\\baggy-pant.jpg', 400000, 280000, '2020-09-02', 1, 1, ''),
+(29, 9, 'Ryder pant', 'Quần dài cạp chun suông', 'assets\\img\\product\\ryder-pant.jpg', 450000, 225000, '2020-03-23', 1, 1, ''),
+(30, 9, 'Lincoln pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\lincoln-pant.jpg', 450000, 270000, '2020-02-19', 1, 1, ''),
+(31, 9, 'Flex pant 2021', 'Quần dài cạp chun suông', 'assets\\img\\product\\flex-pant-2021.jpg', 390000, 389000, '2020-11-03', 1, 1, ''),
+(32, 9, 'Hunter pant', 'Quần dài cạp chun baggy', 'assets\\img\\product\\hunter-pant.jpg', 450000, 360000, '2020-02-02', 1, 1, ''),
+(33, 9, 'Gabi pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\gabi-pant.jpg', 450000, 315000, '2020-03-28', 1, 1, ''),
+(34, 9, 'Kaija pant', 'Sweatpant', 'assets\\img\\product\\kaija-pant.jpg', 450000, 270000, '2020-08-12', 1, 1, ''),
+(35, 9, 'Soft pant', 'Sweatpant', 'assets\\img\\product\\soft-pant.jpg', 590000, 354000, '2020-09-01', 1, 0, ''),
+(36, 10, 'Chenmegan', 'Cắt gấu', 'assets\\img\\product\\chenmegan1.jpg', 520000, 0, '2020-03-15', 1, 1, ''),
+(37, 10, 'Chenmegan', 'Trơn', 'assets\\img\\product\\chenmegan2.jpg', 520000, 0, '2020-08-19', 1, 1, ''),
+(38, 10, 'Chenmegan', 'Rách gối', 'assets\\img\\product\\chenmegan3.jpg', 520000, 0, '2020-06-20', 1, 1, ''),
+(39, 11, 'Suedue Hoodie', 'Basic hoodie', 'assets\\img\\product\\suedue-hoodie.jpg', 490000, 343000, '2020-09-12', 1, 1, ''),
+(40, 12, 'Soft sweater', 'Basic Sweater', 'assets\\img\\product\\soft-sweater.jpg', 490000, 294000, '2020-08-10', 1, 0, ''),
+(41, 3, 'Turtle neck sweater', 'Basic sweater', 'assets\\img\\product\\turtle-neck-sweater.jpg', 390000, 273000, '2020-04-09', 1, 1, ''),
+(42, 12, 'Daily sweater 2020', 'Basic sweater', 'assets\\img\\product\\daily-sweater-2020.jpg', 390000, 149000, '2020-07-15', 1, 1, ''),
+(43, 12, 'Blake sweater', 'Basic sweater', 'assets\\img\\product\\blake-sweater.jpg', 450000, 315000, '2020-06-29', 1, 1, ''),
+(44, 12, 'Clever sweater', 'Look sweater', 'assets\\img\\product\\clever-sweater.jpg', 390000, 312000, '2020-06-26', 1, 1, ''),
+(45, 12, 'Max sweater', 'Basic sweater', 'assets\\img\\product\\max-sweater.jpg', 350000, 245000, '2020-07-31', 1, 1, ''),
+(46, 12, 'Brody sweater', 'Stripe sweater', 'assets\\img\\product\\brody-sweater.jpg', 350000, 149000, '2020-04-13', 1, 1, ''),
+(47, 13, 'Kaija jacket', 'Windbreaker', 'assets\\img\\product\\kaija-jacket.jpg', 550000, 330000, '2020-04-20', 1, 1, ''),
+(48, 14, 'Bomber jacket 2020', 'Jacket oversize', 'assets\\img\\product\\bomber-jacket-2020.jpg', 750000, 525000, '2020-10-17', 1, 1, ''),
+(49, 14, 'Enzo jacket', 'Jacket fit', 'assets\\img\\product\\enzo-jacket.jpg', 590000, 472000, '2020-05-24', 1, 1, ''),
+(50, 14, 'Brooks jacket', 'Jacket fit', 'assets\\img\\product\\brooks-jacket.jpg', 950000, 570000, '2020-07-09', 1, 1, ''),
+(51, 14, 'Raincoat jacket', 'Jacket fit', 'assets\\img\\product\\raincoat-jacket.jpg', 890000, 534000, '2019-05-20', 1, 1, ''),
+(52, 14, 'Casmere jacket', 'Jacket fit', 'assets\\img\\product\\casmere-jacket.jpg', 800000, 400000, '2019-05-20', 1, 1, ''),
+(53, 14, 'Windy jacket', 'Jacket fit', 'assets\\img\\product\\windy-jacket.jpg', 750000, 600000, '2019-05-20', 1, 1, ''),
+(54, 14, 'Cozy jacket', 'Jacket fit', 'assets\\img\\product\\cozy-jacket.jpg', 850000, 510000, '2019-05-20', 1, 1, ''),
+(55, 14, 'Tyler jacket', 'Jacket oversize', 'assets\\img\\product\\tyler-jacket.jpg', 690000, 483000, '2019-05-20', 1, 1, ''),
+(56, 14, 'Coby jacket', 'Jacket oversize', 'assets\\img\\product\\coby-jacket.jpg', 850000, 680000, '2019-05-20', 1, 1, ''),
+(57, 15, 'Selby coat', 'Trench coat', 'assets\\img\\product\\selby-coat.jpg', 1050000, 630000, '2019-05-20', 1, 1, ''),
+(58, 15, 'Puffy jacket', 'Basic coat', 'assets\\img\\product\\puffy-jacket.jpg', 950000, 570000, '2019-05-20', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -643,22 +646,22 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (350, 39, 10, 2, 160, 1, ''),
 (351, 39, 10, 3, 160, 1, ''),
 (352, 39, 10, 4, 130, 1, ''),
-(353, 40, 8, 1, 25, 1, ''),
-(354, 40, 8, 2, 30, 1, ''),
-(355, 40, 8, 3, 20, 1, ''),
-(356, 40, 8, 4, 18, 1, ''),
-(357, 40, 4, 1, 14, 1, ''),
-(358, 40, 4, 2, 17, 1, ''),
-(359, 40, 4, 3, 20, 1, ''),
-(360, 40, 4, 4, 22, 1, ''),
-(361, 40, 2, 1, 30, 1, ''),
-(362, 40, 2, 2, 40, 1, ''),
-(363, 40, 2, 3, 35, 1, ''),
-(364, 40, 2, 4, 25, 1, ''),
-(365, 40, 5, 1, 14, 1, ''),
-(366, 40, 5, 2, 22, 1, ''),
-(367, 40, 5, 3, 23, 1, ''),
-(368, 40, 5, 4, 30, 1, ''),
+(353, 40, 8, 1, 25, 0, ''),
+(354, 40, 8, 2, 30, 0, ''),
+(355, 40, 8, 3, 20, 0, ''),
+(356, 40, 8, 4, 18, 0, ''),
+(357, 40, 4, 1, 14, 0, ''),
+(358, 40, 4, 2, 17, 0, ''),
+(359, 40, 4, 3, 20, 0, ''),
+(360, 40, 4, 4, 22, 0, ''),
+(361, 40, 2, 1, 30, 0, ''),
+(362, 40, 2, 2, 40, 0, ''),
+(363, 40, 2, 3, 35, 0, ''),
+(364, 40, 2, 4, 25, 0, ''),
+(365, 40, 5, 1, 14, 0, ''),
+(366, 40, 5, 2, 22, 0, ''),
+(367, 40, 5, 3, 23, 0, ''),
+(368, 40, 5, 4, 30, 0, ''),
 (369, 41, 5, 1, 100, 1, ''),
 (370, 41, 5, 2, 120, 1, ''),
 (371, 41, 5, 3, 120, 1, ''),
@@ -939,9 +942,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `role`, `gender`, `phone`, `email`, `image`, `dateCreate`, `status`, `note`) VALUES
-(1, 'Hùng Quân', 'hungquan6311', '123456', 1, 1, '0902251996', 'hungquan6311@gmail.com', 'dist\\images\\user\\quan.jpg', '2018-05-03', 1, ''),
-(2, 'Phương Anh', 'anhnp', '123456', 2, 0, '0339365789', 'anhnp@gmail.com', 'dist\\images\\user\\pa.jpg', '2018-09-24', 1, ''),
-(3, 'Thành Nam', 'namvt', '123456', 3, 1, '0352354568', 'namvt@gmail.com', 'dist\\images\\user\\nam.jpg', '2018-11-22', 1, '');
+(1, 'Hùng Quân', 'hungquan6311', '123456', 1, 1, '0902251996', 'hungquan6311@gmail.com', 'dist\\images\\user\\quan.jpg', '2015-05-03', 1, ''),
+(2, 'Phương Anh', 'anhnp', '123456', 2, 0, '0339365789', 'anhnp@gmail.com', 'dist\\images\\user\\pa.jpg', '2016-09-24', 1, ''),
+(3, 'Thành Nam', 'namvt', '123456', 3, 1, '0352354529', 'namvt@gmail.com', 'dist/images/user/12.png', '2017-11-22', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -1037,19 +1040,19 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_color`
 --
 ALTER TABLE `tbl_color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_infomation`
 --
 ALTER TABLE `tbl_infomation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
@@ -1079,7 +1082,7 @@ ALTER TABLE `tbl_productdetail`
 -- AUTO_INCREMENT for table `tbl_size`
 --
 ALTER TABLE `tbl_size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_transaction`
@@ -1091,7 +1094,7 @@ ALTER TABLE `tbl_transaction`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

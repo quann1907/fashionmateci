@@ -29,8 +29,8 @@
                 <ul aria-expanded="false">
                     <li><a href="<?= base_url() ?>admin/Category">Loại sản phẩm</a></li>
                     <li><a href="<?= base_url() ?>admin/Color">Màu sắc</a></li>
-                    <li><a href="#">Bảng size</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="<?= base_url() ?>admin/Size">Kích cỡ</a></li>
+                    <li><a href="<?= base_url() ?>admin/Product">Sản phẩm</a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false"><i class="flaticon-381-network"></i><span class="nav-text">QL cửa hàng</span></a>
