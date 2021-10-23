@@ -68,8 +68,9 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Màu sắc</th>
+                                                <th>Tên màu</th>
                                                 <th>Mã màu</th>
+                                                <th>Màu hiển thị</th>
                                                 <th>Ghi chú</th>
                                                 <th>Tác vụ</th>
                                             </tr>
@@ -81,6 +82,10 @@
                                                     <td><?= $i++ ?></td>
                                                     <td><?= $value['name'] ?></td>
                                                     <td><?= $value['color'] ?></td>
+                                                    <td>
+                                                        <div style="height: 15px; width: 15px; margin-left: 15px; border: 1px solid black; background-color: <?= $value['color'] ?>;">
+                                                        </div>
+                                                    </td>
                                                     <td><?= $value['note'] ?></td>
                                                     <td>
                                                         <div class="d-flex">

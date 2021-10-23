@@ -58,24 +58,30 @@
 										<div class="col-lg-12 mb-2">
 											<div class="form-group">
 												<label class="text-label"><strong>Tên danh mục sản phẩm*</strong></label>
-												<input type="text" name="fullname" class="form-control">
+												<input type="text" name="name" class="form-control">
 											</div>
 										</div>
 										<div class="col-lg-12 mb-2">
 											<div class="form-group">
 												<label class="text-label"><strong>Mức</strong></label>
-												<input type="text" name="username" class="form-control">
+												<input type="text" name="level" class="form-control">
 											</div>
 										</div>
 										<div class="col-lg-12 mb-2">
 											<div class="form-group">
 												<label class="text-label"><strong>Danh mục cha</strong></label>
-												<select class="form-control" id="inlineFormCustomSelect" name="role">
+												<select class="form-control" id="inlineFormCustomSelect" name="parentID">
 													<option selected>Chọn..</option>
-													<!-- <option value="1">Quản trị viên</option>
-													<option value="2">Quản lý cửa hàng</option>
-													<option value="3">Nhân viên</option> -->
+													<?php foreach ($category as $value): ?>
+														<option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+													<?php endforeach ?>
 												</select>
+											</div>
+										</div>
+										<div class="col-lg-12 mb-2">
+											<div class="form-group">
+												<label class="text-label"><strong>Ghi chú</strong></label>
+												<textarea class="form-control" rows="4" id="comment" name="note"></textarea>
 											</div>
 										</div>
 									</div>

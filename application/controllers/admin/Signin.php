@@ -26,16 +26,14 @@ class Signin extends CI_Controller {
 		else{
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$session = $this->User_model->user_login($username,$password);
+			$session = $this->User_model->user_login($username, $password);
 			if(count($session) == 1){
-				$session_array = array('id'=>$session[0]->id, 'fullname'=>$session[0]->fullname);
+				$session_array = array('id'=>$session->id, 'fullname'=>$session->fullname, 'image'=>$session->image);
 				$this->session->set_userdata('loggedIn',$session_array);
 				redirect('admin/Dashboard');
 			}
-			else{
 				$this->session->set_flashdata('error','Something went wrong');
 				redirect('admin/Signin');
-			}
 		}
 	}
 

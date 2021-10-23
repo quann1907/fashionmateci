@@ -13,12 +13,29 @@ class ProductDetail_model extends CI_Model {
 		return $this->db->get('tbl_productdetail')->result_array();
 	}
 
-
 	public function changeStatus($id, $status)
 	{
 		$this->db->where('id', $id);
 		$this->db->set('status', $status);
 		$this->db->update('tbl_productdetail');
+	}
+
+
+// Client
+
+	public function getProductDetailByID($id)
+	{
+		$this->db->where('idProduct', $id);
+		return $this->db->get('tbl_productdetail');
+	}
+
+	public function getIDProductDetail($productID, $colorID, $sizeID)
+	{
+		$this->db->select('id');
+		$this->db->where('idProduct', $productID);
+		$this->db->where('idColor', $colorID);
+		$this->db->where('idSize', $sizeID);
+		return $this->db->get('tbl_productdetail')->row();
 	}
 
 }

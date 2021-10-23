@@ -8,6 +8,13 @@ class Customer_model extends CI_Model {
 		return $this->db->get('tbl_customer')->result_array();
 	}
 
+	public function loginCustomer($username, $password)
+	{
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+		return $this->db->get('tbl_customer')->row();
+	}
+
 	public function count_customer()
 	{
 		$query = $this->db->get('tbl_customer')->result_array();

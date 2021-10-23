@@ -64,7 +64,7 @@
                                                         <label class="custom-control-label" for="checkAll"></label>
                                                     </div>
                                                 </th>
-                                                <th><strong>ID</strong></th>
+                                                <th><strong>TT</strong></th>
                                                 <th><strong>Tên</strong></th>
                                                 <th><strong>Danh mục cha</strong></th>
                                                 <th><strong>Ngày tạo</strong></th>
@@ -73,68 +73,73 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $i=1 ?>
                                             <?php foreach ($category as $value): ?>
-                                            <tr>
-                                                <td>
-                                                    <div class="custom-control custom-checkbox checkbox-success check-lg">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheckBox2" required="">
-                                                        <label class="custom-control-label" for="customCheckBox2"></label>
-                                                    </div>
-                                                </td>
-                                                <td><strong><?= $value['id'] ?></strong></td>
-                                                <td><div class="d-flex align-items-center"><span class="w-space-no"><?= $value['name'] ?></span></div></td>
-                                                <td>
-                                                    <?php if ($value['parentID'] == 0) {
-                                                        echo "Không có";
-                                                    }
-                                                    else {
-                                                        $nameParent = $this->Category_model->getCategoryByID($value['parentID']);
-                                                        echo $nameParent;}
-                                                    ?>
-                                                </td>
-                                                <td><?= $value['dateCreate'] ?></td>
-                                                <td>
-                                                    <?php if($value['status'] == 1){
-                                                        echo '<div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-2"></i>Đang hoạt động</div>';
-                                                    } 
-                                                    elseif ($value['status'] == 0) {
-                                                        echo '<div class="d-flex align-items-center"><i class="fa fa-circle text-danger mr-2"></i>Không hoạt động</div>';
-                                                    }
-                                                    else{
-                                                        echo '<div class="d-flex align-items-center"><i class="fa fa-circle text-danger mr-2"></i>Lỗi</div>';
-                                                    }?>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox checkbox-success check-lg">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheckBox2" required="">
+                                                            <label class="custom-control-label" for="customCheckBox2"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td><strong><?= $i++ ?></strong></td>
+                                                    <td><div class="d-flex align-items-center"><span class="w-space-no"><?= $value['childName'] ?></span></div></td>
+                                                    <td>
+                                                        <?php if ($value['parentName'] == null) {
+                                                            echo "Không có";
+                                                        }
+                                                        else {
+                                                            echo $value['parentName'];}
+                                                        ?>
+                                                        </td>
+                                                        <td><?= $value['dateCreate'] ?></td>
+                                                        <?php if($value['status'] == 1) {
+                                                            echo '<td><span class="badge light badge-success">Hoạt động</span></td>';
+                                                        }
+                                                        elseif($value['status'] == 0) {
+                                                            echo '<td><span class="badge light badge-danger">Đóng băng</span></td>';
+                                                        }
+                                                        else {
+                                                            echo '<td><span class="badge light badge-warning">Lỗi</span></td>';
+                                                        }
+                                                        ?>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
+                                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item btn <?= ($value['status']==1)?'disabled':'';?>" href="<?= base_url()?>admin/Category/changeStatus/<?= $value['childID'] ?>/1">Kích hoạt động</a>
+                                                                    <a class="dropdown-item btn <?= ($value['status']==0)?'disabled':'';?>" href="<?= base_url()?>admin/Category/changeStatus/<?= $value['childID'] ?>/0">Ngừng hoạt động</a>
+                                                                    <a class="dropdown-item btn" href="<?= base_url() ?>admin/Category/loadEditCategory/<?= $value['childID'] ?>">Cập nhật dữ liệu danh mục sản phẩm</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!--********************************** Content body end ***********************************-->
+
+            <!--********************************** Footer start ***********************************-->
+            <?php include 'footer.php' ?>
+            <!--********************************** Footer end ***********************************-->
+
         </div>
-        <!--********************************** Content body end ***********************************-->
+        <!--********************************** Main wrapper end ***********************************-->
 
-        <!--********************************** Footer start ***********************************-->
-        <?php include 'footer.php' ?>
-        <!--********************************** Footer end ***********************************-->
-
-    </div>
-    <!--********************************** Main wrapper end ***********************************-->
-
-    <!--********************************** Scripts ***********************************-->
-    <!-- Required vendors -->
-    <script src="<?= base_url() ?>dist/vendor/global/global.min.js"></script>
-    <script src="<?= base_url() ?>dist/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-    <script src="<?= base_url() ?>dist/js/custom.min.js"></script>
-    <script src="<?= base_url() ?>dist/js/deznav-init.js"></script>
-</body>
-</html>
+        <!--********************************** Scripts ***********************************-->
+        <!-- Required vendors -->
+        <script src="<?= base_url() ?>dist/vendor/global/global.min.js"></script>
+        <script src="<?= base_url() ?>dist/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="<?= base_url() ?>dist/js/custom.min.js"></script>
+        <script src="<?= base_url() ?>dist/js/deznav-init.js"></script>
+    </body>
+    </html>

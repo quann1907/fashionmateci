@@ -22,6 +22,12 @@ class Order_model extends CI_Model {
 		$query = $this->db->get('tbl_order')->result_array();
 		return count($query);
 	}
+
+	public function insertOrder($data)
+	{
+		$this->db->insert('tbl_order', $data);
+		return $this->db->insert_id();
+	}
 }
 
 /* End of file Order.php */

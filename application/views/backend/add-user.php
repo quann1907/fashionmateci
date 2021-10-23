@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Sản phẩm</title>
+	<title>Fashionmate - Thêm thông tin nhân viên</title>
 	<!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
 	<!-- Custom Stylesheet -->
@@ -50,7 +50,7 @@
 					<div class="col-xl-12 col-xxl-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">Thêm mới tài khoản nhân viên</h4>
+								<h4 class="card-title">Thêm thông tin nhân viên</h4>
 							</div>
 							<div class="card-body">
 								<form action="<?= base_url() ?>admin/User/addUser" method="POST" enctype="multipart/form-data">

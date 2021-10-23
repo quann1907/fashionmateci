@@ -30,35 +30,27 @@
                             <div class="row prod-items prod-items-3">
                                 <?php foreach ($product as $value): ?>
                                     <article class="cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 sectgl-item">
-                                        <div class="sectgl prod-i">
+                                        <div class="sectgl prod-i" style="border-radius: 20px;">
                                             <div class="prod-i-top">
-                                                <a class="prod-i-img" href="product.html">
+                                                <a class="prod-i-img" href="<?= base_url() ?>ProductDetail/productDetail/<?= $value['id']?>">
                                                     <img src="<?= base_url() ?><?= $value['image'] ?>">
                                                 </a>
-                                                <div class="prod-i-actions">
-                                                    <div class="prod-i-actions-in">
-                                                        <p class="prod-quickview">
-                                                            <a href="#" class="hover-label quick-view"><i class="icon ion-plus"></i><span>Chi tiết sản phẩm</span></a>
-                                                        </p>
-                                                        <p class="prod-i-cart">
-                                                            <a href="<?= base_url() ?>Product/addProductToCart/<?= $value['id'] ?>/1" class="hover-label prod-addbtn"><i class="icon ion-android-cart"></i><span>Thêm vào giỏ hàng</span></a>
-                                                        </p>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <div class="prod-i-bot">
-                                                <div class="prod-i-info">
+                                            <div class="prod-i-bot" style="border-radius: 0 0 20px 20px;">
+                                                <div class="prod-i-price">
                                                     <p><?= number_format($value['price'], 0, ',', '.') ?> VND</p>
                                                     <p class="prod-i-categ"><a><?= $value['b'] ?></a></p>
                                                 </div>
-                                                <h3 class="prod-i-ttl"><a><?= $value['a'] ?></a></h3>
+                                                <h3 class="prod-i-ttl"><a href="<?= base_url() ?>ProductDetail/productDetail/<?= $value['id']?>"><?= $value['a'] ?></a></h3>
+                                                <!-- <div style="height: 10px; width: 10px; border: 1px solid rgba(0, 0, 0, .2); background-color: #000">
+                                                </div> -->
                                             </div>
                                         </div>
                                     </article>
                                 <?php endforeach ?>
                             </div>
                             <p class="special-more">
-                                <a class="special-more-btn" href="<?= base_url() ?>Product">Show More Products</a>
+                                <a class="special-more-btn" href="<?= base_url() ?>Product" style="border-radius: 15px;">Xem thêm...</a>
                             </p>
                         </div>
 
@@ -143,18 +135,8 @@
             <?php include 'footer.php' ?>
         </div><!-- #page -->
 
-
-
-<!-- <script src="js/jquery-1.12.3.min.js"></script>
-
-<script src="js/jquery-plugins.js"></script>
-
-<script src="js/main.js"></script>
-
-
-<script src="1extra/js/jquery-ui.min.js"></script> -->
-<script>
-    jQuery(document).ready(function ($) {
+        <script>
+            jQuery(document).ready(function ($) {
     // Modal Form
     $('#free-psd').fancybox({
         padding: 0,

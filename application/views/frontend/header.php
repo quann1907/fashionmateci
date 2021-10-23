@@ -9,18 +9,29 @@
         <ul class="h-shop-links">
             <li class="h-search-btn" id="h-search-btn"><i class="ion-search"></i></li>
             <li class="h-shop-icon h-profile">
-                <a href="auth.html" title="My Account">
-                    <i class="ion-android-person"></i>
-                </a>
+                <?php if(!isset($_SESSION['customer'])){ ?>
+                    <a href="<?= base_url()?>Login" title="Login">
+                        <i class="ion-android-person"></i>
+                    </a>
+                <?php } else { ?>
+                    <a href="<?= base_url()?>" title="Hồ sơ">
+                        <i class="ion-android-person"></i>
+                    </a>
+                <?php } ?>
                 <ul class="h-profile-links">
-                    <li><a href="auth.html">Login / Registration</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="compare.html">Compare</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <?php if(!isset($_SESSION['customer'])){ ?>
+                        <li><a href="<?= base_url()?>Login">Đăng nhập</a></li>
+                        <li><a href="<?= base_url()?>Home/loadCart">Giỏ hàng</a></li>
+                    <?php } else { ?>
+                        <li><a href="">Hồ sơ cá nhân</a></li>
+                        <li><a href="<?= base_url()?>Home/loadCart">Giỏ hàng</a></li>
+                        <li><a href="">Lịch sử đặt hàng</a></li>
+                        <li><a href="<?= base_url()?>Login/logout">Logout</a></li>
+                    <?php } ?>
                 </ul>
             </li>
             <li class="h-cart">
-                <a class="cart-contents" href="<?= base_url()?>Product/loadCart">
+                <a class="cart-contents" href="<?= base_url()?>Home/loadCart">
                     <p class="h-cart-icon">
                         <i class="ion-android-cart"></i>
                         <span><?= $this->cart->total_items() ?></span>
@@ -40,10 +51,14 @@
                                 </li>
                             <?php endforeach ?>
                         </ul>
-                        <p class="total"><b>Subtotal:</b> <?= number_format($this->cart->total()) ?> VNĐ</p>
+                        <p class="total"><b>Subtotal: </b> <?= number_format($this->cart->total()) ?> VNĐ</p>
                         <p class="buttons">
-                            <a href="cart.html" class="button">View cart</a>
-                            <a href="checkout.html" class="button">Checkout</a>
+                            <a href="<?= base_url()?>Home/loadCart" class="button">Giỏ hàng</a>
+                            <?php if(!isset($_SESSION['customer'])){ ?>
+                            <a href="<?= base_url() ?>Login" class="button">Đặt hàng</a>
+                            <?php } else { ?>
+                            <a href="<?= base_url() ?>Order/orderProduct" class="button">Đặt hàng</a>  
+                            <?php } ?>
                         </p>
                     </div>
                 </div>
@@ -55,10 +70,10 @@
     </div><div class="mainmenu">
         <nav id="h-menu" class="h-menu">
             <ul>
-                <li class="active">
+                <li class="<?=($this->uri->segment(1)==null)?'active':''?>">
                     <a href="<?= base_url() ?>">Trang chủ</a>
                 </li>
-                <li class="menu-item-has-children">
+                <li class="menu-item-has-children <?=($this->uri->segment(1)=='Product')?'active':''?>">
                     <a href="<?= base_url() ?>Product">Bộ sưu tập</a>
                     <ul class="sub-menu">
                         <?php
@@ -66,8 +81,8 @@
                         ?>
                     </ul>
                 </li>
-                <li>
-                    <a href="">Special Deal</a>
+                <li class="<?=($this->uri->segment(2)=='loadSpecialDeal')?'active':''?>">
+                    <a href="<?= base_url() ?>Home/loadSpecialDeal">Special Deal</a>
                 </li>
                 <li class="menu-item-has-children">
                     <a href="about.html">Về chúng tôi</a>
@@ -76,7 +91,7 @@
                             <a href="about.html">Bảo quản</a>
                         </li>
                         <li>
-                            <a href="contacts.html">Tuyển dụng</a>
+                            <a href="<?= base_url() ?>Home/loadRecruitment">Tuyển dụng</a>
                         </li>
                         <li>
                             <a href="gallery.html">Cửa hàng</a>

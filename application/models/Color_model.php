@@ -31,6 +31,22 @@ class Color_model extends CI_Model {
 		$this->db->delete('tbl_color');
 	}
 
+	public function getColorProduct($id)
+	{
+		$this->db->select('tbl_color.id, tbl_color.name, tbl_color.color');
+		$this->db->join('tbl_productdetail','tbl_productdetail.idColor = tbl_color.id' );
+		$this->db->where('tbl_productdetail.idProduct', $id);
+		$this->db->where('tbl_productdetail.idSize', 1);
+		return $this->db->get('tbl_color')->result_array();
+	}
+
+	public function getNameColor($id)
+	{
+		$this->db->select('name');
+		$this->db->where('id', $id);
+		return $this->db->get('tbl_color')->row();
+	}
+
 }
 
 /* End of file Color_model.php */

@@ -1,10 +1,15 @@
+<?php 
+	if(!isset($_SESSION['loggedIn'])){
+		redirect('admin','refresh');
+	}
+?>
 <div class="header">
 	<div class="header-content">
 		<nav class="navbar navbar-expand">
 			<div class="collapse navbar-collapse justify-content-between">
 				<div class="header-left">
 					<div class="dashboard_bar">
-						Dashboard
+						Hệ thống quản trị
 					</div>
 				</div>
 
@@ -164,7 +169,7 @@
 					</li>
 					<li class="nav-item dropdown header-profile">
 						<a class="nav-link" href="javascript:;" role="button" data-toggle="dropdown">
-							<img src="" width="20" alt=""/>
+							<img src="<?= base_url().$_SESSION['loggedIn']['image']?>" width="20" alt=""/>
 							<div class="header-info">
 								<span>Hello, <strong><?php echo $this->session->userdata('loggedIn')['fullname']; ?></strong></span>
 							</div>

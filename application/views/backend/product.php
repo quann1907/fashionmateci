@@ -53,7 +53,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Sản phẩm</h4>
-                                <button type="button" class="btn light btn-primary">Thêm mới</button>
+                                <a href="<?php base_url() ?>Product/loadAddProduct"><button type="button" class="btn light btn-primary">Thêm mới</button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

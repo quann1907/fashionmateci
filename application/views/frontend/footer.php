@@ -26,7 +26,7 @@
             <h3 class="widgettitle">Dịch vụ</h3>
             <ul class="menu">
                 <li>
-                    <a href="catalog-list.html">Hướng dẫn mua hàng</a>
+                    <a href="<?= base_url() ?>Home/loadShoppingGuilde">Hướng dẫn mua hàng</a>
                 </li>
                 <li>
                     <a href="catalog-gallery.html">Chính sách bảo hành</a>

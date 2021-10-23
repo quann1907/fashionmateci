@@ -15,6 +15,11 @@ class Product extends CI_Controller {
 		$this->load->view('backend/product', $data);
 	}
 
+	public function loadAddProduct()
+	{
+		$this->load->view('backend/add-product');
+	}
+
 	public function changeStatus($id, $status)
 	{
 		$this->Product_model->changeStatus($id, $status);

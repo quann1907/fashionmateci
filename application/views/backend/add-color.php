@@ -70,7 +70,7 @@
 										<div class="col-lg-12 mb-2">
 											<div class="form-group">
 												<label class="text-label"><strong>Ghi chú</strong></label>
-												<textarea class="form-control" rows="4" id="comment" name="note"><?= $value['note'] ?></textarea>
+												<textarea class="form-control" rows="4" id="comment" name="note"></textarea>
 											</div>
 										</div>
 									</div>
