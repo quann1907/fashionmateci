@@ -3,13 +3,11 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
         <meta charset="UTF-8">
-        <title>MultiShop - eCommerce HTML Template</title>
+        <title>Fashionmate - FRESH CLEAN COMPORT</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="format-detection" content="telephone=no">
-
         <?php include 'lib.php' ?>
-
     </head>
     <body>
         <div id="page" class="site">
@@ -37,13 +35,15 @@
                                                 </a>
                                             </div>
                                             <div class="prod-i-bot" style="border-radius: 0 0 20px 20px;">
-                                                <div class="prod-i-price">
-                                                    <p><?= number_format($value['price'], 0, ',', '.') ?> VND</p>
-                                                    <p class="prod-i-categ"><a><?= $value['b'] ?></a></p>
+                                                <div class="prod-i-info">
+                                                    <?php if($value['sale'] == 0){ ?>
+                                                        <p class="prod-i-price"><?= number_format($value['price'], 0, ',', '.') ?> VNĐ</p>
+                                                    <?php } else { ?>
+                                                        <p class="prod-i-price"><?= number_format($value['sale'], 0, ',', '.') ?> VNĐ<del style="margin-left: 15px;"><?= number_format($value['price'], 0, ',', '.') ?> VNĐ</del></p>
+                                                    <?php } ?>
+                                                    <p class="prod-i-categ"><a href=""><?= $value['b'] ?></a></p>
                                                 </div>
                                                 <h3 class="prod-i-ttl"><a href="<?= base_url() ?>ProductDetail/productDetail/<?= $value['id']?>"><?= $value['a'] ?></a></h3>
-                                                <!-- <div style="height: 10px; width: 10px; border: 1px solid rgba(0, 0, 0, .2); background-color: #000">
-                                                </div> -->
                                             </div>
                                         </div>
                                     </article>
@@ -257,8 +257,5 @@
     }
 }
 </style>
-
-<script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46016169 = new Ya.Metrika({ id:46016169, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "../mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46016169" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
 </body>
 </html>

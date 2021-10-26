@@ -16,7 +16,7 @@ class Product_model extends CI_Model {
 	public function getNewProduct()
 	{
 		$quantity = 6;
-		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price');
+		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
 		$this->db->where('tbl_product.status', 1);
 		$this->db->where('tbl_category.status', 1);
 		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
@@ -66,6 +66,8 @@ class Product_model extends CI_Model {
 		return $this->db->get('tbl_product')->result_array();
 	}
 
+	/*--------------------Client--------------------*/
+
 	public function getProductByID($id)
 	{
 		$this->db->select('tbl_product.id, tbl_product.idCategory, tbl_product.name as name, tbl_product.shortDesc, tbl_product.image, tbl_product.price, tbl_product.sale, tbl_product.dateCreate, tbl_product.modifyBy, tbl_product.status, tbl_product.note, tbl_category.name as categoryName');
@@ -109,6 +111,7 @@ class Product_model extends CI_Model {
 
 	public function countProductOnSale()
 	{
+		$this->db->where('status', 1);
 		$this->db->where('sale !=', 0);
 		return $this->db->get('tbl_product')->num_rows();
 	}
@@ -122,7 +125,6 @@ class Product_model extends CI_Model {
 		$this->db->order_by('sale', 'asc');
 		return $this->db->get('tbl_product', $limit, $offset)->result_array();
 	}
-
 }
 
 /* End of file Product_model.php */

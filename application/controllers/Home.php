@@ -22,11 +22,6 @@ class Home extends CI_Controller {
 		$this->load->view('frontend/cart');
 	}
 
-	public function loadShoppingGuilde()
-	{
-		$this->load->view('frontend/shopping-guide.php');
-	}
-
 	public function loadSpecialDeal()
 	{
 		$result = $this->Product_model->countProductOnSale();
@@ -72,14 +67,43 @@ class Home extends CI_Controller {
 		$this->load->view('frontend/product', $data);
 	}
 
+	public function loadConserve()
+	{
+		$this->load->view('frontend/conserve');
+	}
+
+	public function loadRecruitment()
+	{
+		$result = $this->Information_model->getInfoByType('recruitment');
+		$data['recruitment'] = json_decode($result, true);
+		$this->load->view('frontend/recruitment', $data);
+	}
+
+	public function loadAboutus()
+	{
+		$result = $this->Information_model->getInfoByType('aboutus');
+		$data['aboutus'] = json_decode($result, true);
+		$this->load->view('frontend/about-us', $data);
+	}
+
+	public function loadContact()
+	{
+		$this->load->view('frontend/contact');
+	}
+
+	public function loadShoppingGuilde()
+	{
+		$this->load->view('frontend/shopping-guide');
+	}
+
 	public function loadWarranty()
 	{
 		$this->load->view('frontend/warranty');
 	}
 
-	public function loadRecruitment()
+	public function loadReturnGoods()
 	{
-		$this->load->view('frontend/recruitment');
+		$this->load->view('frontend/return-goods');
 	}
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2021 at 03:20 PM
+-- Generation Time: Oct 26, 2021 at 12:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -147,8 +147,10 @@ CREATE TABLE `tbl_infomation` (
 --
 
 INSERT INTO `tbl_infomation` (`id`, `type`, `content`, `status`, `note`) VALUES
-(1, 'info_header', '[{\"address\":\"54 Triều Khúc, Thanh Xuân, HN\",\n\"email\":\"hungquan6311@gmail.com\",\n\"hotline\":\"+84 902251996\"\n}]', 1, ''),
-(2, 'store', '[{\"address\":\"39 Trần Quốc Toản, Hoàn Kiếm, Hà Nội\"\n},\n{\"address\":\"67A Đội Cấn, Ba Đình, Hà Nội\"\n},\n{\"address\":\"Lầu 1, 108 Nguyễn Sỹ Sách, Tân Bình, Hồ Chí Minh\"\n},\n{\"address\":\"142-D6 Lê Lai, Quận 1, Hồ Chí Minh\"\n}]', 1, '');
+(1, 'info_header', '[{\"address\":\"39 Trần Quốc Toản, Hoàn Kiếm, Hà Nội\",\n\"email\":\"fashion.mate@gmail.com\",\n\"hotline\":\"+84 902251996\"\n}]', 1, ''),
+(2, 'store', '[{\"address\":\"39 Trần Quốc Toản, Hoàn Kiếm, Hà Nội\"\n},\n{\"address\":\"67A Đội Cấn, Ba Đình, Hà Nội\"\n},\n{\"address\":\"Lầu 1, 108 Nguyễn Sỹ Sách, Tân Bình, Hồ Chí Minh\"\n},\n{\"address\":\"142-D6 Lê Lai, Quận 1, Hồ Chí Minh\"\n}]', 1, ''),
+(3, 'recruitment', '[\n{\"image\":\"assets/img/recruitment1.jpg\",\n\"job\":\"onlines sale (part time)\"\n},\n{\"image\":\"assets/img/recruitment2.jpg\",\n\"job\":\"onlines sale (full time)\"\n},\n{\"image\":\"assets/img/recruitment3.jpg\",\n\"job\":\"onlines supervisor\"\n},\n{\"image\":\"assets/img/recruitment4.jpg\",\n\"job\":\"sale assistant (part time)\"\n},\n{\"image\":\"assets/img/recruitment5.jpg\",\n\"job\":\"sale assistant (full time)\"\n}\n]', 1, ''),
+(4, 'aboutus', '[\n{\"title\":\"Tầm nhìn của chúng tôi\",\n\"content\":\"Chúng tôi bắt đầu với mục tiêu rõ ràng bằng việc tập trung vào đối tượng khách hàng thuộc tầng lớp giới trẻ, những người năng động, gắn bó với môi trường sống xung quanh, những người sống trong cộng đồng và luôn được gắn kết với nhau. Những người trẻ tuổi có phong cách ăn mặc giản dị, ghét định kiến và muốn thoải mái với bất cứ thứ gì họ mặc\"\n},\n{\"title\":\"Sản phẩm của chúng tôi\",\n\"content\":\"Để đáp ứng nhu cầu của khách hàng, chúng tôi nắm bắt những xu hướng thời trang mới nhất, pha trộn với những hình ảnh được nhìn thấy trên đường phố và làm lại chúng theo phong cách của Look để biến chúng thành những trang phục thoải mái và dễ mặc. Các sản phẩm của Fashion mate chú trọng vào 3 yếu tố: FRESH, CLEAN, COMPORT. Chúng tôi có 2 dòng sản phẩm riêng biệt. Dòng sản phẩm đầu tiên tập trung vào giới trẻ vị thành niên, với phong cách ăn mặc giản dị và dễ dàng với áo phông, quần nỉ, quần short, mũ cap... Dòng sản phẩm tiếp theo với những thiết kế đặc biệt cao cấp hơn cho những bạn trẻ đã đồng hành cùng thương hiệu từ khi còn trẻ, tìm đến Fashionmate với nhu cầu về những sản phẩm chất lượng cao, mang phong cách chiết trung, có thể mặc ban ngày hay buổi tối, đi làm, đi học hay đi chơi.\"\n},\n{\"title\":\"Định hướng của chúng tôi\",\n\"content\":\"Fashionmate luôn phát triển song hành với khách hàng của mình, bằng cách bắt kịp những xu hướng về công nghệ, những thay đổi trong cộng đồng/xã hội, và đổi mới trong âm nhạc và nghệ thuật. Điều này không chỉ thể hiện qua thiết kế sản phẩm mà còn được thấy qua những chiến dịch truyền thông hướng đến xây dựng một cộng đồng văn minh, hiện đại và nhân văn. Hi vọng các bạn có thể theo dõi và đồng hành cùng chúng tôi trên con đường đó.\"\n}\n]', 1, '');
 
 -- --------------------------------------------------------
 
@@ -171,9 +173,14 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `idCustomer`, `orderDate`, `money`, `estimateDeliveryDate`, `status`, `note`) VALUES
-(1, 7, '2021-10-08', 500000, '2021-10-12', 2, ''),
-(4, 6, '2021-09-08', 500000, '2021-10-01', 1, ''),
-(5, 5, '2021-07-07', 500000, '2021-08-01', 0, '');
+(14, 2, '2021-10-22', 1060000, '2021-10-29', 0, ''),
+(15, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
+(16, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
+(17, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
+(18, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
+(19, 2, '2021-10-25', 1990000, '2021-11-01', 0, ''),
+(20, 4, '2021-10-25', 1010000, '2021-11-01', 0, ''),
+(21, 4, '2021-10-25', 1530000, '2021-11-01', 0, '');
 
 -- --------------------------------------------------------
 
@@ -188,6 +195,30 @@ CREATE TABLE `tbl_orderdetail` (
   `quantity` int(11) NOT NULL,
   `note` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_orderdetail`
+--
+
+INSERT INTO `tbl_orderdetail` (`id`, `idOrder`, `idProductDetail`, `quantity`, `note`) VALUES
+(12, 14, 370, 2, ''),
+(13, 14, 17, 1, ''),
+(14, 19, 573, 1, ''),
+(15, 20, 334, 1, ''),
+(16, 21, 326, 2, ''),
+(17, 21, 334, 1, '');
+
+--
+-- Triggers `tbl_orderdetail`
+--
+DELIMITER $$
+CREATE TRIGGER `trg_order` AFTER INSERT ON `tbl_orderdetail` FOR EACH ROW BEGIN
+update tbl_productdetail
+set tbl_productdetail.quantity = tbl_productdetail.quantity - new.quantity
+WHERE tbl_productdetail.id = new.idProductDetail;
+end
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -214,23 +245,23 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `idCategory`, `name`, `shortDesc`, `image`, `price`, `sale`, `dateCreate`, `modifyBy`, `status`, `note`) VALUES
-(1, 5, 'Basic Tee 2021', 'Áo phông cổ tròn fit trơn', 'assets\\img\\product\\basic-tee-2021.jpg', 249000, 0, '2020-10-09', 1, 1, ''),
-(2, 5, 'Wine Tee', 'Graphic oversize tee', 'assets\\img\\product\\wine-tee.jpg', 350000, 0, '2020-10-05', 1, 1, ''),
-(3, 5, 'Crew T-shirt', 'Basic oversize tee', 'assets\\img\\product\\crew-t-shirt.jpg', 280000, 0, '2020-05-09', 1, 1, ''),
-(4, 6, 'Sammi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\sammi-shirt.jpg', 490000, 0, '2020-10-17', 1, 1, ''),
-(5, 6, 'Mindy shirt', 'Áo sơ mi dài tay fit cổ tàu hoạ tiết', 'assets\\img\\product\\mindy-shirt.jpg', 420000, 0, '2020-11-20', 1, 1, ''),
-(6, 6, 'Floral shirt 2021 v2', 'Áo sơ mi ngắn tay fit cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt-2021-v2.jpg', 349000, 0, '2020-08-20', 1, 1, ''),
-(7, 6, 'Floral shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt.jpg', 349000, 0, '2020-11-20', 1, 1, ''),
-(8, 6, 'Kimi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\kimi-shirt.jpg', 490000, 0, '2020-05-20', 1, 1, ''),
-(9, 6, 'Julian shirt', 'Áo sơ mi dài tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\julian-shirt.jpg', 450000, 0, '2020-09-12', 1, 1, ''),
+(1, 5, 'Basic Tee 2021', 'Áo phông cổ tròn fit trơn', 'assets\\img\\product\\basic-tee-2021.jpg', 249000, 149000, '2020-10-09', 1, 1, ''),
+(2, 5, 'Wine Tee', 'Graphic oversize tee', 'assets\\img\\product\\wine-tee.jpg', 350000, 0, '2020-10-05', 1, 0, ''),
+(3, 5, 'Crew T-shirt', 'Basic oversize tee', 'assets\\img\\product\\crew-t-shirt.jpg', 280000, 199000, '2020-05-09', 1, 1, ''),
+(4, 6, 'Sammi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\sammi-shirt.jpg', 490000, 245000, '2020-10-17', 1, 1, ''),
+(5, 6, 'Mindy shirt', 'Áo sơ mi dài tay fit cổ tàu hoạ tiết', 'assets\\img\\product\\mindy-shirt.jpg', 420000, 252000, '2020-11-20', 1, 1, ''),
+(6, 6, 'Floral shirt 2021 v2', 'Áo sơ mi ngắn tay fit cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt-2021-v2.jpg', 349000, 99000, '2020-08-20', 1, 1, ''),
+(7, 6, 'Floral shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\floral-shirt.jpg', 349000, 99000, '2020-11-20', 1, 1, ''),
+(8, 6, 'Kimi shirt', 'Áo sơ mi ngắn tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\kimi-shirt.jpg', 490000, 245000, '2020-05-20', 1, 1, ''),
+(9, 6, 'Julian shirt', 'Áo sơ mi dài tay oversize cổ đức hoạ tiết', 'assets\\img\\product\\julian-shirt.jpg', 450000, 270000, '2020-09-12', 1, 1, ''),
 (10, 6, 'Velvet shirt', 'Oversize shirt', 'assets\\img\\product\\velvet-shirt.jpg', 450000, 0, '2020-10-01', 1, 1, ''),
 (11, 6, 'Elevis shirt', 'Fit shirt', 'assets\\img\\product\\elevis-shirt.jpg', 390000, 0, '2020-09-11', 1, 0, ''),
-(12, 7, 'Vicent tee', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\vicent-tee.jpg', 290000, 0, '2020-07-23', 1, 1, ''),
-(13, 7, 'Willa polo', 'Áo phông polo oversize trơn', 'assets\\img\\product\\willa-polo.jpg', 389000, 0, '2020-12-02', 1, 1, ''),
-(14, 7, 'Wendy polo', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\wendy-polo.jpg', 389000, 0, '2020-09-15', 1, 1, ''),
-(15, 7, 'Daily polo', 'Áo phông polo oversize trơn', 'assets\\img\\product\\daily-polo.jpg', 390000, 0, '2020-09-29', 1, 1, ''),
-(16, 7, 'Fitteed polo', 'Basic polo', 'assets\\img\\product\\fitteed-polo.jpg', 390000, 0, '2020-11-20', 1, 1, ''),
-(17, 8, 'Wind short', 'Quần short cạp âu', 'assets\\img\\product\\wind-short.jpg', 389000, 0, '2020-09-17', 1, 1, ''),
+(12, 7, 'Vicent tee', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\vicent-tee.jpg', 290000, 149000, '2020-07-23', 1, 1, ''),
+(13, 7, 'Willa polo', 'Áo phông polo oversize trơn', 'assets/img/product/willa-polo.jpg', 389000, 149000, '2020-12-02', 1, 1, ''),
+(14, 7, 'Wendy polo', 'Áo phông polo oversize hoạ tiết', 'assets\\img\\product\\wendy-polo.jpg', 389000, 149000, '2020-09-15', 1, 1, ''),
+(15, 7, 'Daily polo', 'Áo phông polo oversize trơn', 'assets\\img\\product\\daily-polo.jpg', 390000, 199000, '2020-09-29', 1, 1, ''),
+(16, 7, 'Fitteed polo', 'Basic polo', 'assets\\img\\product\\fitteed-polo.jpg', 390000, 199000, '2020-11-20', 1, 1, ''),
+(17, 8, 'Wind short', 'Quần short cạp âu', 'assets\\img\\product\\wind-short.jpg', 389000, 194000, '2020-09-17', 1, 1, ''),
 (18, 8, 'Poker short', 'Quần short cạp chun', 'assets\\img\\product\\poker-short.jpg', 369000, 99000, '2020-09-23', 1, 1, ''),
 (19, 8, 'Vicky short', 'Quần short cạp âu', 'assets\\img\\product\\vicky-short.jpg', 369000, 99000, '2020-07-25', 1, 1, ''),
 (20, 8, 'Lee short', 'Quần short cạp chun', 'assets\\img\\product\\lee-short.jpg', 349000, 148000, '2020-08-08', 1, 0, ''),
@@ -244,7 +275,7 @@ INSERT INTO `tbl_product` (`id`, `idCategory`, `name`, `shortDesc`, `image`, `pr
 (28, 9, 'Baggy pant', 'Quần dài cạp chun baggy', 'assets\\img\\product\\baggy-pant.jpg', 400000, 280000, '2020-09-02', 1, 1, ''),
 (29, 9, 'Ryder pant', 'Quần dài cạp chun suông', 'assets\\img\\product\\ryder-pant.jpg', 450000, 225000, '2020-03-23', 1, 1, ''),
 (30, 9, 'Lincoln pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\lincoln-pant.jpg', 450000, 270000, '2020-02-19', 1, 1, ''),
-(31, 9, 'Flex pant 2021', 'Quần dài cạp chun suông', 'assets\\img\\product\\flex-pant-2021.jpg', 390000, 389000, '2020-11-03', 1, 1, ''),
+(31, 9, 'Flex pant 2021', 'Quần dài cạp chun suông', 'assets\\img\\product\\flex-pant-2021.jpg', 390000, 249000, '2020-11-03', 1, 1, ''),
 (32, 9, 'Hunter pant', 'Quần dài cạp chun baggy', 'assets\\img\\product\\hunter-pant.jpg', 450000, 360000, '2020-02-02', 1, 1, ''),
 (33, 9, 'Gabi pant', 'Quần dài cạp âu suông', 'assets\\img\\product\\gabi-pant.jpg', 450000, 315000, '2020-03-28', 1, 1, ''),
 (34, 9, 'Kaija pant', 'Sweatpant', 'assets\\img\\product\\kaija-pant.jpg', 450000, 270000, '2020-08-12', 1, 1, ''),
@@ -254,9 +285,9 @@ INSERT INTO `tbl_product` (`id`, `idCategory`, `name`, `shortDesc`, `image`, `pr
 (38, 10, 'Chenmegan', 'Rách gối', 'assets\\img\\product\\chenmegan3.jpg', 520000, 0, '2020-06-20', 1, 1, ''),
 (39, 11, 'Suedue Hoodie', 'Basic hoodie', 'assets\\img\\product\\suedue-hoodie.jpg', 490000, 343000, '2020-09-12', 1, 1, ''),
 (40, 12, 'Soft sweater', 'Basic Sweater', 'assets\\img\\product\\soft-sweater.jpg', 490000, 294000, '2020-08-10', 1, 0, ''),
-(41, 3, 'Turtle neck sweater', 'Basic sweater', 'assets\\img\\product\\turtle-neck-sweater.jpg', 390000, 273000, '2020-04-09', 1, 1, ''),
+(41, 12, 'Turtle neck sweater', 'Basic sweater', 'assets\\img\\product\\turtle-neck-sweater.jpg', 390000, 273000, '2020-04-09', 1, 1, ''),
 (42, 12, 'Daily sweater 2020', 'Basic sweater', 'assets\\img\\product\\daily-sweater-2020.jpg', 390000, 149000, '2020-07-15', 1, 1, ''),
-(43, 12, 'Blake sweater', 'Basic sweater', 'assets\\img\\product\\blake-sweater.jpg', 450000, 315000, '2020-06-29', 1, 1, ''),
+(43, 12, 'Blake sweater', 'Basic sweater', 'assets\\img\\product\\blake-sweater.jpg', 450000, 315000, '2020-06-29', 1, 0, ''),
 (44, 12, 'Clever sweater', 'Look sweater', 'assets\\img\\product\\clever-sweater.jpg', 390000, 312000, '2020-06-26', 1, 1, ''),
 (45, 12, 'Max sweater', 'Basic sweater', 'assets\\img\\product\\max-sweater.jpg', 350000, 245000, '2020-07-31', 1, 1, ''),
 (46, 12, 'Brody sweater', 'Stripe sweater', 'assets\\img\\product\\brody-sweater.jpg', 350000, 149000, '2020-04-13', 1, 1, ''),
@@ -271,7 +302,7 @@ INSERT INTO `tbl_product` (`id`, `idCategory`, `name`, `shortDesc`, `image`, `pr
 (55, 14, 'Tyler jacket', 'Jacket oversize', 'assets\\img\\product\\tyler-jacket.jpg', 690000, 483000, '2019-05-20', 1, 1, ''),
 (56, 14, 'Coby jacket', 'Jacket oversize', 'assets\\img\\product\\coby-jacket.jpg', 850000, 680000, '2019-05-20', 1, 1, ''),
 (57, 15, 'Selby coat', 'Trench coat', 'assets\\img\\product\\selby-coat.jpg', 1050000, 630000, '2019-05-20', 1, 1, ''),
-(58, 15, 'Puffy jacket', 'Basic coat', 'assets\\img\\product\\puffy-jacket.jpg', 950000, 570000, '2019-05-20', 1, 1, '');
+(58, 15, 'Puffy jacket', 'Basic coat', 'assets/img/product/puffy-jacket.jpg', 950000, 570000, '2019-05-20', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -294,7 +325,7 @@ CREATE TABLE `tbl_productdetail` (
 --
 
 INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quantity`, `status`, `note`) VALUES
-(1, 1, 2, 1, 100, 1, ''),
+(1, 1, 2, 1, 99, 1, ''),
 (2, 1, 2, 2, 100, 1, ''),
 (3, 1, 2, 3, 100, 1, ''),
 (4, 1, 2, 4, 100, 1, ''),
@@ -310,7 +341,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (14, 3, 4, 2, 110, 1, ''),
 (15, 3, 4, 3, 90, 1, ''),
 (16, 3, 4, 4, 88, 1, ''),
-(17, 3, 5, 1, 86, 1, ''),
+(17, 3, 5, 1, 84, 1, ''),
 (18, 3, 5, 2, 100, 1, ''),
 (19, 3, 5, 3, 92, 1, ''),
 (20, 3, 5, 4, 80, 1, ''),
@@ -619,7 +650,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (323, 36, 2, 3, 200, 1, ''),
 (324, 36, 2, 4, 165, 1, ''),
 (325, 37, 2, 1, 150, 1, ''),
-(326, 37, 2, 2, 180, 1, ''),
+(326, 37, 2, 2, 178, 1, ''),
 (327, 37, 2, 3, 190, 1, ''),
 (328, 37, 2, 4, 160, 1, ''),
 (329, 38, 2, 1, 140, 1, ''),
@@ -627,7 +658,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (331, 38, 2, 3, 186, 1, ''),
 (332, 38, 2, 4, 160, 1, ''),
 (333, 39, 5, 1, 139, 1, ''),
-(334, 39, 5, 2, 155, 1, ''),
+(334, 39, 5, 2, 153, 1, ''),
 (335, 39, 5, 3, 140, 1, ''),
 (336, 39, 5, 4, 120, 1, ''),
 (337, 39, 4, 1, 120, 1, ''),
@@ -663,7 +694,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (367, 40, 5, 3, 23, 0, ''),
 (368, 40, 5, 4, 30, 0, ''),
 (369, 41, 5, 1, 100, 1, ''),
-(370, 41, 5, 2, 120, 1, ''),
+(370, 41, 5, 2, 116, 1, ''),
 (371, 41, 5, 3, 120, 1, ''),
 (372, 41, 5, 4, 130, 1, ''),
 (373, 41, 12, 1, 100, 1, ''),
@@ -866,7 +897,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (570, 57, 10, 2, 110, 1, ''),
 (571, 57, 10, 3, 113, 1, ''),
 (572, 57, 10, 4, 95, 1, ''),
-(573, 58, 1, 1, 120, 1, ''),
+(573, 58, 1, 1, 119, 1, ''),
 (574, 58, 1, 2, 134, 1, ''),
 (575, 58, 1, 3, 128, 1, ''),
 (576, 58, 1, 4, 106, 1, ''),
@@ -904,21 +935,6 @@ INSERT INTO `tbl_size` (`id`, `size`, `note`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_transaction`
---
-
-CREATE TABLE `tbl_transaction` (
-  `id` int(11) NOT NULL,
-  `idOrder` int(11) NOT NULL,
-  `money` int(11) NOT NULL,
-  `payments` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL,
-  `note` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_user`
 --
 
@@ -943,8 +959,16 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `role`, `gender`, `phone`, `email`, `image`, `dateCreate`, `status`, `note`) VALUES
 (1, 'Hùng Quân', 'hungquan6311', '123456', 1, 1, '0902251996', 'hungquan6311@gmail.com', 'dist\\images\\user\\quan.jpg', '2015-05-03', 1, ''),
-(2, 'Phương Anh', 'anhnp', '123456', 2, 0, '0339365789', 'anhnp@gmail.com', 'dist\\images\\user\\pa.jpg', '2016-09-24', 1, ''),
-(3, 'Thành Nam', 'namvt', '123456', 3, 1, '0352354529', 'namvt@gmail.com', 'dist/images/user/12.png', '2017-11-22', 1, '');
+(2, 'Phương Anh', 'anhnp', '123456', 2, 0, '0339365789', 'anhnp@gmail.com', 'dist/images/user/anhnp.jpg', '2016-09-24', 1, ''),
+(3, 'Thành Nam', 'namvt', '123456', 3, 1, '0352354529', 'namvt@gmail.com', 'dist/images/user/namvt.jpg', '2017-11-22', 1, ''),
+(4, 'Nguyễn Dũng', 'dungnc', '123456', 3, 1, '0391202119', 'dungnc@gmail.com', 'dist/images/user/dungnc.png', '2016-08-17', 1, ''),
+(5, 'Vũ Đăng', 'dangvt', '123456', 2, 1, '0391024322', 'dungnc@gmail.com', 'dist/images/user/dangvt.jpg', '2016-10-14', 1, ''),
+(6, 'Minh Anh', 'anhpnm', '123456', 2, 0, '0392025310', 'anhpnm@gmail.com', 'dist/images/user/anhpnm.jpg', '2016-12-06', 1, ''),
+(7, 'Đăng Khoa', 'khoatd', '123456', 3, 1, '0382140328', 'khoatd@gmail.com', 'dist/images/user/khoatd.jpg', '2016-09-28', 1, ''),
+(8, 'Trung Anh', 'anhdt', '123456', 3, 1, '0391100923', 'anhdt@gmail.com', 'dist/images/user/anhdt.jpg', '2017-02-20', 0, ''),
+(9, 'Phương Trâm', 'tramnp', '123456', 3, 0, '0388087657', 'tramnp@gmail.com', 'dist/images/user/tramnp.jpg', '2017-01-07', 1, ''),
+(10, 'Hoàng Linh', 'linhht', '123456', 3, 0, '0372204110', 'linhht@gmail.com', 'dist/images/user/linhht.jpg', '2016-11-30', 1, ''),
+(11, 'Duy Long', 'longnd', '123456', 3, 1, '0986182322', 'longnd@gmail.com', 'dist/images/user/longnd.jpg', '2017-01-27', 1, '');
 
 --
 -- Indexes for dumped tables
@@ -988,7 +1012,7 @@ ALTER TABLE `tbl_order`
 ALTER TABLE `tbl_orderdetail`
   ADD PRIMARY KEY (`id`),
   ADD KEY `constraint_orderdetail_order` (`idOrder`),
-  ADD KEY `constraint_orderdetail_product` (`idProductDetail`);
+  ADD KEY `constraint_orderdetail_productdetail` (`idProductDetail`);
 
 --
 -- Indexes for table `tbl_product`
@@ -1014,13 +1038,6 @@ ALTER TABLE `tbl_size`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_transaction`
---
-ALTER TABLE `tbl_transaction`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `constraint_transaction_order` (`idOrder`);
-
---
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
@@ -1034,7 +1051,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbl_color`
@@ -1052,19 +1069,19 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT for table `tbl_infomation`
 --
 ALTER TABLE `tbl_infomation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_orderdetail`
 --
 ALTER TABLE `tbl_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
@@ -1085,16 +1102,10 @@ ALTER TABLE `tbl_size`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_transaction`
---
-ALTER TABLE `tbl_transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -1117,7 +1128,7 @@ ALTER TABLE `tbl_order`
 --
 ALTER TABLE `tbl_orderdetail`
   ADD CONSTRAINT `constraint_orderdetail_order` FOREIGN KEY (`idOrder`) REFERENCES `tbl_order` (`id`),
-  ADD CONSTRAINT `constraint_orderdetail_product` FOREIGN KEY (`idProductDetail`) REFERENCES `tbl_productdetail` (`id`);
+  ADD CONSTRAINT `constraint_orderdetail_productdetail` FOREIGN KEY (`idProductDetail`) REFERENCES `tbl_productdetail` (`id`);
 
 --
 -- Constraints for table `tbl_product`
@@ -1133,12 +1144,6 @@ ALTER TABLE `tbl_productdetail`
   ADD CONSTRAINT `constraint_detailP_color` FOREIGN KEY (`idColor`) REFERENCES `tbl_color` (`id`),
   ADD CONSTRAINT `constraint_detailP_product` FOREIGN KEY (`idProduct`) REFERENCES `tbl_product` (`id`),
   ADD CONSTRAINT `constraint_detailP_size` FOREIGN KEY (`idSize`) REFERENCES `tbl_size` (`id`);
-
---
--- Constraints for table `tbl_transaction`
---
-ALTER TABLE `tbl_transaction`
-  ADD CONSTRAINT `constraint_transaction_order` FOREIGN KEY (`idOrder`) REFERENCES `tbl_order` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

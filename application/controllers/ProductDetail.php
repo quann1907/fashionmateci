@@ -33,11 +33,17 @@ class ProductDetail extends CI_Controller {
 	{
 		$get = $this->input->post();
 		$product = $this->Product_model->getProductByID($get['id']);
+		if($product[0]['sale'] == 0){
+			$price = $product[0]['price'];
+		}
+		else{
+			$price = $product[0]['sale'];
+		}
 		$data = array(
 			'id' => $get['id'],
 			'qty' => $get['qty'],
 			'name' => $product[0]['name'],
-			'price' => $product[0]['price'],
+			'price' => $price,
 			'sale' => $product[0]['sale'],
 			'shortDesc' => $product[0]['shortDesc'],
 			'options' => array('image'=> $product[0]['image'], 'Size' => $get['Size'], 'Color' => $get['Color'])
@@ -48,6 +54,12 @@ class ProductDetail extends CI_Controller {
 		}else{
 			echo "<script>alert('Thêm thất bại! Thử lại sau')</script>";
 		}
+		redirect('Product','refresh');
+	}
+
+	public function removeProductFromCart($rowid)
+	{
+		$this->cart->update(array('rowid' => $rowid, 'qty' => 0));
 		redirect('Product','refresh');
 	}
 

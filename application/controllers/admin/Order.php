@@ -7,6 +7,7 @@ class Order extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Order_model');
+		$this->load->model('OrderDetail_model');
 	}
 
 	public function index()
@@ -19,6 +20,12 @@ class Order extends CI_Controller {
 	{
 		$this->Order_model->changeStatus($id, $status);
 		return redirect('admin/order');
+	}
+
+	public function getOrderDetail($id)
+	{
+		$data['orderDetail'] = $this->OrderDetail_model->getOrderDetail($id);
+		$this->load->view('backend/order-detail', $data);
 	}
 }
 

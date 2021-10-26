@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Chi tiết sản phẩm</title>
+    <title>Fashionmate - Chi tiết đơn hàng</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Datatable -->
@@ -28,7 +28,6 @@
 
     <!--********************************** Main wrapper start ***********************************-->
     <div id="main-wrapper">
-
         <!--********************************** Nav header start ***********************************-->
         <?php include 'nav-header.php'; ?>
         <!--********************************** Nav header end ***********************************-->
@@ -52,8 +51,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Chi tiết sản phẩm</h4>
-                                <button type="button" class="btn light btn-primary">Thêm mới</button>
+                                <h4 class="card-title">Chi tiết đơn hàng</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -62,47 +60,26 @@
                                             <tr>
                                                 <th>TT</th>
                                                 <th>Tên sản phẩm</th>
-                                                <th>Loại</th>
+                                                <th>Hình ảnh</th>
                                                 <th>Màu sắc</th>
                                                 <th>Size</th>
                                                 <th>Đơn giá</th>
+                                                <th>Giảm giá</th>
                                                 <th>Số lượng</th>
-                                                <th>Trạng thái</th>
-                                                <th>Ghi chú</th>
-                                                <th>Tác vụ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php $i = 1 ?>
-                                            <?php foreach ($productDetail as $value): ?>
+                                            <?php foreach ($orderDetail as $value): ?>
                                                 <tr>
                                                     <td><?= $i++ ?></td>
-                                                    <td><?= $value['nameProduct'] ?></td>
-                                                    <td><?= $value['nameCategory'] ?></td>
+                                                    <td><?= $value['name'] ?></td>
+                                                    <td><img src="<?= base_url() ?><?= $value['image']?>" style="width: 50px; height: 68px;;" alt=""></td>
                                                     <td><?= $value['color'] ?></td>
                                                     <td><?= $value['size'] ?></td>
                                                     <td><strong><?= $value['price'] ?> VND</strong></td>
+                                                    <td><strong><?= $value['sale'] ?> VND</strong></td>
                                                     <td><?= $value['quantity'] ?></td>
-                                                    <?php if ($value['status'] == 1) { ?>
-                                                        <td><span class="badge light badge-success">Hoạt động</span></td>
-                                                    <?php } elseif ($value['status'] == 0) { ?>
-                                                        <td><span class="badge light badge-danger">Ngừng kinh doanh</span></td>
-                                                    <?php } else { ?>
-                                                        <td><span class="badge light badge-danger">Lỗi</span></td>
-                                                    <?php }?>
-                                                    <td><?= $value['note'] ?></td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="btn btn-success light sharp" data-toggle="dropdown">
-                                                                <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item btn <?= ($value['status']==1)?'disabled':'';?>" href="<?= base_url()?>admin/ProductDetail/changeStatus/<?= $value['id'] ?>/1">Kích hoạt động</a>
-                                                                <a class="dropdown-item btn <?= ($value['status']==0)?'disabled':'';?>" href="<?= base_url()?>admin/ProductDetail/changeStatus/<?= $value['id'] ?>/0">Ngừng kinh doanh</a>
-                                                                <a class="dropdown-item btn" href="<?= base_url() ?>admin/ProductDetail/loadEditProductDetail/<?= $value['id'] ?>">Cập nhật dữ liệu sản phẩm</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
                                                 </tr>
                                             <?php endforeach ?>
                                         </tbody>

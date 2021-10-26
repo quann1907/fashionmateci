@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
         <meta charset="UTF-8">
-        <title>Fashionmate - Tuyển dụng</title>
+        <title>Fashionmate - Về chúng tôi</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="format-detection" content="telephone=no">
@@ -20,15 +20,14 @@
             <div id="content" class="site-content"><div id="primary" class="content-area width-normal">
                 <main id="main" class="site-main">
                     <div class="cont maincont">
-                        <h1 class="maincont-ttl" style="margin: 30px 0px 50px">Cơ hội nghề nghiệp</h1>
-                        <div class="row prod-items prod-items-2">
-                            <?php foreach ($recruitment as $value): ?>
-                                <article class="cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 sectgl-item">
-                                    <img src="<?= base_url().$value['image'] ?>" alt="" style="border-radius: 20px">
-                                    <h6 style="text-align: center; padding: 8px 10% 20px; text-transform: uppercase;"><?= $value['job'] ?></h6>
-                                </article>
-                            <?php endforeach ?>
-                        </div>
+                        <h1 class="maincont-ttl" style="margin: 30px 0px 50px">Về chúng tôi</h1>
+                        <?php foreach ($aboutus as $value): ?>
+                            <div>
+                                <h1 style="text-transform: uppercase; font-size: 20px; line-height: 50px; font-family: Montserrat; color: #444444; font-weight: 500;"><?= $value['title'] ?></h1>
+                                <p style="text-align: justify; padding: 8px 0px; font-size: 14px; line-height: 30px; font-family: Montserrat; color: #444444; font-weight: 300;"><?= $value['content'] ?></p>
+                            </div>
+                            <hr style="border-top: 1px solid #d6d6d6">
+                        <?php endforeach ?>
                     </div>
                 </main>
             </div>
@@ -38,26 +37,26 @@
 
     <style>
     .buy-btn-wrap {
-       position: fixed;
-       bottom: 50px;
-       right: 50px;
-       width: 70px;
-       height: 70px;
-       border-radius: 70px;
-       z-index: 3;
-   }
-   .buy-btn {
-       width: 100%;
-       height: 100%;
-       border-radius: 100%;
-       line-height: 64px;
-       background: #34a5ed;
-       text-align: center;
-       color: #fff !important;
-       display: block;
-       transition: all 0.3s;
-   }
-   .buy-btn .buy-btn-val {
+     position: fixed;
+     bottom: 50px;
+     right: 50px;
+     width: 70px;
+     height: 70px;
+     border-radius: 70px;
+     z-index: 3;
+ }
+ .buy-btn {
+     width: 100%;
+     height: 100%;
+     border-radius: 100%;
+     line-height: 64px;
+     background: #34a5ed;
+     text-align: center;
+     color: #fff !important;
+     display: block;
+     transition: all 0.3s;
+ }
+ .buy-btn .buy-btn-val {
     font-size: 20px;
     line-height: 1;
     margin: 0;
@@ -77,10 +76,10 @@
     letter-spacing: 2px;
 }
 .buy-btn:hover:before {
-   opacity: 1;
+ opacity: 1;
 }
 .buy-btn:hover:after {
-   display: none;
+ display: none;
 }
 .buy-btn:after {
     pointer-events: none;

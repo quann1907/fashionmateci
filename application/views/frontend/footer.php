@@ -15,10 +15,10 @@
                     <a href="index.html">Giới thiệu</a>
                 </li>
                 <li>
-                    <a href="about.html">Tuyển dụng</a>
+                    <a href="<?= base_url() ?>Home/loadRecruitment">Tuyển dụng</a>
                 </li>
                 <li>
-                    <a href="contacts.html">Liên hệ</a>
+                    <a href="<?= base_url() ?>Home/loadContact">Liên hệ</a>
                 </li>
             </ul>
         </div>
@@ -29,10 +29,10 @@
                     <a href="<?= base_url() ?>Home/loadShoppingGuilde">Hướng dẫn mua hàng</a>
                 </li>
                 <li>
-                    <a href="catalog-gallery.html">Chính sách bảo hành</a>
+                    <a href="<?= base_url() ?>Home/loadWarranty">Chính sách bảo hành</a>
                 </li>
                 <li>
-                    <a href="catalog-gallery-full.html">Chính sách đổi trả</a>
+                    <a href="<?= base_url() ?>Home/loadReturnGoods">Chính sách đổi trả</a>
                 </li>
             </ul>
         </div>

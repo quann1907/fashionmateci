@@ -33,25 +33,21 @@ class Order extends CI_Controller {
 				);
 				if ($idProductDetail == null){
 					echo "<script>alert('Sản phẩm không tồn tại!')</script>";
+					$this->cart->destroy();
+					redirect('','refresh');
 				}
 				else {
-					$result = $this->OrderDetail_model->insertOrderDetail(
+					$this->OrderDetail_model->insertOrderDetail(
 						array(
 							'idOrder' => $idOrder,
 							'idProductDetail' => $idProductDetail->id,
 							'quantity' => $value['qty']
-						));
-					if($result){
-						$this->cart->destroy();
-						echo "<script>alert('Đặt hàng thành công..chờ xác nhận đơn..')</script>";
-						redirect('','refresh');
-					}
-					else{
-						echo "<script>alert('Lỗi!!')</script>";
-						redirect('Product/loadCart','refresh');
-					}
+						)
+					);
 				}
 			}
+			$this->cart->destroy();
+			redirect('Product','refresh');
 		} catch (Exception $e) {
 			echo "<script>alert('Lỗi!!')</script>";
 		}

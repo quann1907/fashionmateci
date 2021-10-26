@@ -52,7 +52,7 @@
                                                 </div></div>
                                                 <div class="prod-li-info">
                                                     <p class="prod-li-add">
-                                                        <a href="<?= base_url()?>Product/removeProductFromCart/<?= $value['rowid']?>" class="button hover-label prod-addbtn"><i class="icon ion-close-round"></i><span>Gỡ bỏ</span></a>
+                                                        <a href="<?= base_url()?>ProductDetail/removeProductFromCart/<?= $value['rowid']?>" class="button hover-label prod-addbtn"><i class="icon ion-close-round"></i><span>Gỡ bỏ</span></a>
                                                     </p>
                                                     <p class="prod-li-information">
                                                         <a href="#" class="hover-label"><i class="icon ion-more"></i><span>Chi tiết sản phẩm</span></a>
@@ -75,7 +75,7 @@
                                         <?php if(!isset($_SESSION['customer'])){ ?>
                                         <a href="<?= base_url() ?>Login" class="checkout-button button" style="margin-left: 10px;">Đặt hàng</a>
                                         <?php } else { ?>
-                                        <a href="<?= base_url() ?>Order/orderProduct" class="checkout-button button" style="margin-left: 10px;">Đặt hàng</a>
+                                        <a href="<?= ($this->cart->contents()!=null)?base_url().'Order/orderProduct':'';?>" class="checkout-button button" style="margin-left: 10px;">Đặt hàng</a>
                                         <?php } ?>
                                         <div class="order-total">
                                             <p class="cart-totals-ttl">Tổng tiền</p>

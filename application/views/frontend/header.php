@@ -42,7 +42,7 @@
                         <ul class="cart_list">
                             <?php foreach ($this->cart->contents() as $value): ?>
                                 <li>
-                                    <a href="<?= base_url()?>Product/removeProductFromCart/<?= $value['rowid']?>" class="remove">×</a>
+                                    <a href="<?= base_url()?>ProductDetail/removeProductFromCart/<?= $value['rowid']?>" class="remove">×</a>
                                     <a href="#">
                                         <img src="<?= base_url()?><?=$value['options']['image'] ?>" alt="" width="32px" height="21px">
                                         <?= $value['name'] ?>
@@ -84,20 +84,18 @@
                 <li class="<?=($this->uri->segment(2)=='loadSpecialDeal')?'active':''?>">
                     <a href="<?= base_url() ?>Home/loadSpecialDeal">Special Deal</a>
                 </li>
-                <li class="menu-item-has-children">
-                    <a href="about.html">Về chúng tôi</a>
+                <?php $listString = array("loadAboutus","loadRecruitment","loadConserve");?>
+                <li class="menu-item-has-children <?=(in_array($this->uri->segment(2), $listString))?'active':''?>">
+                    <a href="<?= base_url() ?>Home/loadAboutus">Về chúng tôi</a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="about.html">Bảo quản</a>
+                            <a href="<?= base_url() ?>Home/loadConserve">Bảo quản</a>
                         </li>
                         <li>
                             <a href="<?= base_url() ?>Home/loadRecruitment">Tuyển dụng</a>
                         </li>
                         <li>
-                            <a href="gallery.html">Cửa hàng</a>
-                        </li>
-                        <li>
-                            <a href="404.html">Về chúng tôi</a>
+                            <a href="<?= base_url() ?>Home/loadAboutus">Về chúng tôi</a>
                         </li>
                     </ul>
                 </li>

@@ -59,32 +59,32 @@ class Product extends CI_Controller {
 	}
 
 
-	public function addProductToCart($id, $qty)
-	{
-		$product = $this->Product_model->getProductByID($id);
-		$data = array(
-			'id' => $id,
-			'qty' => $qty,
-			'name' => $product[0]['name'],
-			'price' => $product[0]['price'],
-			'sale' => $product[0]['sale'],
-			'shortDesc' => $product[0]['shortDesc'],
-			'options' => array('image'=> $product[0]['image'])
-		);
-		$status = $this->cart->insert($data);
-		if($status){
-			echo "<script>alert('Thêm thành công! Tiếp tục mua hàng')</script>";
-		}else{
-			echo "<script>alert('Thêm thất bại! Thử lại sau')</script>";
-		}
-		redirect('Product','refresh');
-	}
+	// public function addProductToCart($id, $qty)
+	// {
+	// 	$product = $this->Product_model->getProductByID($id);
+	// 	$data = array(
+	// 		'id' => $id,
+	// 		'qty' => $qty,
+	// 		'name' => $product[0]['name'],
+	// 		'price' => $product[0]['price'],
+	// 		'sale' => $product[0]['sale'],
+	// 		'shortDesc' => $product[0]['shortDesc'],
+	// 		'options' => array('image'=> $product[0]['image'])
+	// 	);
+	// 	$status = $this->cart->insert($data);
+	// 	if($status){
+	// 		echo "<script>alert('Thêm thành công! Tiếp tục mua hàng')</script>";
+	// 	}else{
+	// 		echo "<script>alert('Thêm thất bại! Thử lại sau')</script>";
+	// 	}
+	// 	redirect('Product','refresh');
+	// }
 
-	public function removeProductFromCart($rowid)
-	{
-		$this->cart->update(array('rowid' => $rowid, 'qty' => 0));
-		redirect('Product','refresh');
-	}
+	// public function removeProductFromCart($rowid)
+	// {
+	// 	$this->cart->update(array('rowid' => $rowid, 'qty' => 0));
+	// 	redirect('Product','refresh');
+	// }
 
 	public function getProductByCategory($idCategory)
 	{

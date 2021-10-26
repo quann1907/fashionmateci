@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
         <meta charset="UTF-8">
-        <title>Fashionmate - Tuyển dụng</title>
+        <title>Fashionmate - Liên hệ</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="format-detection" content="telephone=no">
@@ -20,14 +20,36 @@
             <div id="content" class="site-content"><div id="primary" class="content-area width-normal">
                 <main id="main" class="site-main">
                     <div class="cont maincont">
-                        <h1 class="maincont-ttl" style="margin: 30px 0px 50px">Cơ hội nghề nghiệp</h1>
-                        <div class="row prod-items prod-items-2">
-                            <?php foreach ($recruitment as $value): ?>
-                                <article class="cf-sm-6 cf-md-4 cf-lg-4 col-xs-6 col-sm-6 col-md-4 col-lg-4 sectgl-item">
-                                    <img src="<?= base_url().$value['image'] ?>" alt="" style="border-radius: 20px">
-                                    <h6 style="text-align: center; padding: 8px 10% 20px; text-transform: uppercase;"><?= $value['job'] ?></h6>
-                                </article>
-                            <?php endforeach ?>
+                        <h1 class="maincont-ttl">Thông tin liên hệ</h1>
+                        <img src="<?= base_url() ?>assets/img/contact.jpg" alt="" style="padding: 39px 20% 10px;">
+                        <div style="padding: 20px 20% 10px;">
+                            <p><strong>DỊCH VỤ KHÁCH HÀNG:</strong></p>
+                            <ul class="my-ul">
+                                <li class="my-li">Mọi thắc mắc về Website, thông tin đơn hàng, khiếu nại vui lòng liên hệ:</li>
+                                <li class="my-li">- Email: fashion.mate@gmail.com</li>
+                                <li class="my-li">- Hotline khiếu nại: +84 90 225 1996 (Mr Quan).</li>
+                            </ul>
+                        </div>
+                        <div style="padding: 20px 20% 10px;">
+                            <p><strong>NGUYÊN PHỤ LIỆU SẢN XUẤT, THIẾT KẾ, BÁN BUÔN:</strong></p>
+                            <ul class="my-ul">
+                                <li class="my-li">- Email: fashion.mate@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div style="padding: 20px 20% 10px;">
+                            <p><strong>MARKETING:</strong></p>
+                            <ul class="my-ul">
+                                <li class="my-li">- Email: fashion.mate@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div style="padding: 20px 20% 10px;">
+                            <p><strong>HỆ THỐNG CỬA HÀNG:</strong></p>
+                            <ul class="my-ul">
+                                <li class="my-li">- 39 Trần Quốc Toản, Hoàn Kiếm, Hà Nội</li>
+                                <li class="my-li">- 67A Đội Cấn, Ba Đình, Hà Nội</li>
+                                <li class="my-li">- Lầu 1, 108 Nguyễn Sỹ Sách, Tân Bình, Hồ Chí Minh</li>
+                                <li class="my-li">- 142-D6 Lê Lai, Quận 1, Hồ Chí Minh</li>
+                            </ul>
                         </div>
                     </div>
                 </main>
@@ -38,26 +60,26 @@
 
     <style>
     .buy-btn-wrap {
-       position: fixed;
-       bottom: 50px;
-       right: 50px;
-       width: 70px;
-       height: 70px;
-       border-radius: 70px;
-       z-index: 3;
-   }
-   .buy-btn {
-       width: 100%;
-       height: 100%;
-       border-radius: 100%;
-       line-height: 64px;
-       background: #34a5ed;
-       text-align: center;
-       color: #fff !important;
-       display: block;
-       transition: all 0.3s;
-   }
-   .buy-btn .buy-btn-val {
+     position: fixed;
+     bottom: 50px;
+     right: 50px;
+     width: 70px;
+     height: 70px;
+     border-radius: 70px;
+     z-index: 3;
+ }
+ .buy-btn {
+     width: 100%;
+     height: 100%;
+     border-radius: 100%;
+     line-height: 64px;
+     background: #34a5ed;
+     text-align: center;
+     color: #fff !important;
+     display: block;
+     transition: all 0.3s;
+ }
+ .buy-btn .buy-btn-val {
     font-size: 20px;
     line-height: 1;
     margin: 0;
@@ -77,10 +99,10 @@
     letter-spacing: 2px;
 }
 .buy-btn:hover:before {
-   opacity: 1;
+ opacity: 1;
 }
 .buy-btn:hover:after {
-   display: none;
+ display: none;
 }
 .buy-btn:after {
     pointer-events: none;
@@ -143,12 +165,11 @@
 
 .my-li {
     padding: 10px 0 0 2%;
-    line-height: 1.7;
+    line-height: 2;
 }
 .my-ul {
     padding: 5px 0 5px 2%;
 }
 </style>
-
 </body>
 </html>
