@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 12:07 PM
+-- Generation Time: Oct 31, 2021 at 07:16 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -117,7 +117,7 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `fullname`, `username`, `password`, `gender`, `phone`, `email`, `point`, `dateCreate`, `status`, `note`) VALUES
-(1, 'Nguyễn Mai Trang', 'trangnm', '123456', 0, '0337891239', 'trangnm@gmail.com', 0, '2018-09-10', 1, ''),
+(1, 'Mai Trang', 'trangnm', '123456', 0, '0337891239', 'trangnm@gmail.com', 0, '2018-09-10', 1, ''),
 (2, 'Nam Hải', 'vnhai328', '123456', 1, '0983823403', 'vnhai328@gmail.com', 0, '2019-09-10', 1, ''),
 (3, 'Ngọc Kiên', 'ngongockien2709', '123456', 1, '0383497564', 'ngongockien2709@gmail.com', 0, '2019-08-10', 1, ''),
 (4, 'Hoàng Long', 'longhoangnguyen20820', '123456', 1, '0839360001', 'longhoangnguyen20820@gmail.com', 0, '2019-08-10', 1, ''),
@@ -126,7 +126,12 @@ INSERT INTO `tbl_customer` (`id`, `fullname`, `username`, `password`, `gender`, 
 (7, 'Bảo Khôi', 'khoilb', '123456', 1, '0147511672', 'khoilb@gmail.com', 20, '2019-07-05', 1, ''),
 (8, 'Thuỳ Dương', 'duongnt', '123456', 0, '0203383131', 'duongnt@gmail.com', 0, '2019-07-15', 0, ''),
 (9, 'Quỳnh Như', 'nhunq', '123456', 0, '0913468798', 'nhunq@gmail.com', 0, '2019-01-03', 1, ''),
-(10, 'Đức Hiếu', 'hieutd', '123456', 1, '0398481242', 'hieutd@gmail.com', 0, '2018-10-19', 1, '');
+(10, 'Đức Hiếu', 'hieutd', '123456', 1, '0398481242', 'hieutd@gmail.com', 0, '2018-10-19', 1, ''),
+(11, 'Nguyễn Khoa', 'khoanv', '123456', 1, '0399103020', 'khoanv@gmail.com', 0, '2019-05-09', 1, ''),
+(12, 'Duy Anh', 'anhtnd', '123456', 1, '0914221000', 'anhtnd@gmail.com', 0, '2019-04-20', 1, ''),
+(13, 'Hoàng Dũng', 'dungph', '123456', 1, '0984390228', 'dungph@gmail.com', 0, '2018-08-03', 1, ''),
+(14, 'Mẫn Tiên', 'tiennm', '123456', 0, '0375585423', 'tiennm@gmail.com', 0, '2019-10-12', 1, ''),
+(15, 'Phạm Đạt', 'datpt', '123456', 1, '0375230012', 'datpt@gmail.com', 0, '2019-05-29', 1, '');
 
 -- --------------------------------------------------------
 
@@ -173,14 +178,16 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `idCustomer`, `orderDate`, `money`, `estimateDeliveryDate`, `status`, `note`) VALUES
-(14, 2, '2021-10-22', 1060000, '2021-10-29', 0, ''),
-(15, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
-(16, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
-(17, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
-(18, 2, '2021-10-25', 0, '2021-11-01', 0, ''),
-(19, 2, '2021-10-25', 1990000, '2021-11-01', 0, ''),
-(20, 4, '2021-10-25', 1010000, '2021-11-01', 0, ''),
-(21, 4, '2021-10-25', 1530000, '2021-11-01', 0, '');
+(22, 12, '2021-03-01', 348000, '2021-03-08', 1, ''),
+(23, 6, '2021-03-02', 630000, '2021-03-09', 1, ''),
+(24, 6, '2021-03-10', 1360000, '2021-03-17', 1, ''),
+(25, 13, '2021-03-12', 540000, '2021-03-19', 1, ''),
+(26, 13, '2021-03-12', 686000, '2021-03-19', 1, ''),
+(27, 9, '2021-03-15', 388000, '2021-03-22', 1, ''),
+(28, 2, '2021-03-15', 793000, '2021-03-22', 1, ''),
+(29, 2, '2021-03-16', 298000, '2021-03-23', 1, ''),
+(30, 5, '2021-03-20', 199000, '2021-03-27', 1, ''),
+(31, 5, '2021-03-20', 298000, '2021-03-27', 1, '');
 
 -- --------------------------------------------------------
 
@@ -201,12 +208,18 @@ CREATE TABLE `tbl_orderdetail` (
 --
 
 INSERT INTO `tbl_orderdetail` (`id`, `idOrder`, `idProductDetail`, `quantity`, `note`) VALUES
-(12, 14, 370, 2, ''),
-(13, 14, 17, 1, ''),
-(14, 19, 573, 1, ''),
-(15, 20, 334, 1, ''),
-(16, 21, 326, 2, ''),
-(17, 21, 334, 1, '');
+(18, 22, 230, 1, ''),
+(19, 22, 78, 1, ''),
+(20, 23, 571, 1, ''),
+(21, 24, 562, 2, ''),
+(22, 25, 64, 2, ''),
+(23, 26, 347, 2, ''),
+(24, 27, 138, 2, ''),
+(25, 28, 386, 1, ''),
+(26, 28, 326, 1, ''),
+(27, 29, 6, 2, ''),
+(28, 30, 18, 1, ''),
+(29, 31, 115, 2, '');
 
 --
 -- Triggers `tbl_orderdetail`
@@ -330,7 +343,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (3, 1, 2, 3, 100, 1, ''),
 (4, 1, 2, 4, 100, 1, ''),
 (5, 1, 1, 1, 80, 1, ''),
-(6, 1, 1, 2, 75, 1, ''),
+(6, 1, 1, 2, 73, 1, ''),
 (7, 1, 1, 3, 80, 1, ''),
 (8, 1, 1, 4, 55, 1, ''),
 (9, 2, 3, 1, 80, 1, ''),
@@ -342,7 +355,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (15, 3, 4, 3, 90, 1, ''),
 (16, 3, 4, 4, 88, 1, ''),
 (17, 3, 5, 1, 84, 1, ''),
-(18, 3, 5, 2, 100, 1, ''),
+(18, 3, 5, 2, 99, 1, ''),
 (19, 3, 5, 3, 92, 1, ''),
 (20, 3, 5, 4, 80, 1, ''),
 (21, 4, 6, 1, 75, 1, ''),
@@ -388,7 +401,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (61, 9, 1, 1, 100, 1, ''),
 (62, 9, 1, 2, 120, 1, ''),
 (63, 9, 1, 3, 130, 1, ''),
-(64, 9, 1, 4, 115, 1, ''),
+(64, 9, 1, 4, 113, 1, ''),
 (65, 10, 10, 1, 90, 1, ''),
 (66, 10, 10, 2, 96, 1, ''),
 (67, 10, 10, 3, 95, 1, ''),
@@ -402,7 +415,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (75, 11, 4, 3, 132, 1, ''),
 (76, 11, 4, 4, 110, 1, ''),
 (77, 12, 5, 1, 100, 1, ''),
-(78, 12, 5, 2, 120, 1, ''),
+(78, 12, 5, 2, 119, 1, ''),
 (79, 12, 5, 3, 122, 1, ''),
 (80, 12, 5, 4, 90, 1, ''),
 (81, 12, 10, 1, 90, 1, ''),
@@ -439,7 +452,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (112, 14, 4, 4, 88, 1, ''),
 (113, 14, 8, 1, 100, 1, ''),
 (114, 14, 8, 2, 115, 1, ''),
-(115, 14, 8, 3, 115, 1, ''),
+(115, 14, 8, 3, 113, 1, ''),
 (116, 14, 8, 4, 90, 1, ''),
 (117, 15, 8, 1, 100, 1, ''),
 (118, 15, 8, 2, 110, 1, ''),
@@ -462,7 +475,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (135, 16, 8, 3, 105, 1, ''),
 (136, 16, 8, 4, 106, 1, ''),
 (137, 17, 5, 1, 110, 1, ''),
-(138, 17, 5, 2, 145, 1, ''),
+(138, 17, 5, 2, 143, 1, ''),
 (139, 17, 5, 3, 152, 1, ''),
 (140, 17, 5, 4, 114, 1, ''),
 (141, 17, 1, 1, 120, 1, ''),
@@ -554,7 +567,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (227, 25, 2, 3, 165, 1, ''),
 (228, 25, 2, 4, 130, 1, ''),
 (229, 26, 2, 1, 140, 1, ''),
-(230, 26, 2, 2, 168, 1, ''),
+(230, 26, 2, 2, 167, 1, ''),
 (231, 26, 2, 3, 170, 1, ''),
 (232, 26, 2, 4, 130, 1, ''),
 (233, 26, 7, 1, 120, 1, ''),
@@ -650,7 +663,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (323, 36, 2, 3, 200, 1, ''),
 (324, 36, 2, 4, 165, 1, ''),
 (325, 37, 2, 1, 150, 1, ''),
-(326, 37, 2, 2, 178, 1, ''),
+(326, 37, 2, 2, 177, 1, ''),
 (327, 37, 2, 3, 190, 1, ''),
 (328, 37, 2, 4, 160, 1, ''),
 (329, 38, 2, 1, 140, 1, ''),
@@ -671,7 +684,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (344, 39, 2, 4, 160, 1, ''),
 (345, 39, 3, 1, 100, 1, ''),
 (346, 39, 3, 2, 140, 1, ''),
-(347, 39, 3, 3, 137, 1, ''),
+(347, 39, 3, 3, 135, 1, ''),
 (348, 39, 3, 4, 110, 1, ''),
 (349, 39, 10, 1, 140, 1, ''),
 (350, 39, 10, 2, 160, 1, ''),
@@ -710,7 +723,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (383, 41, 13, 3, 120, 1, ''),
 (384, 41, 13, 4, 104, 1, ''),
 (385, 41, 2, 1, 120, 1, ''),
-(386, 41, 2, 2, 130, 1, ''),
+(386, 41, 2, 2, 129, 1, ''),
 (387, 41, 2, 3, 128, 1, ''),
 (388, 41, 2, 4, 121, 1, ''),
 (389, 42, 5, 1, 100, 1, ''),
@@ -886,7 +899,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (559, 56, 2, 3, 150, 1, ''),
 (560, 56, 2, 4, 126, 1, ''),
 (561, 56, 7, 1, 150, 1, ''),
-(562, 56, 7, 2, 178, 1, ''),
+(562, 56, 7, 2, 176, 1, ''),
 (563, 56, 7, 3, 190, 1, ''),
 (564, 56, 7, 4, 167, 1, ''),
 (565, 57, 2, 1, 100, 1, ''),
@@ -895,7 +908,7 @@ INSERT INTO `tbl_productdetail` (`id`, `idProduct`, `idColor`, `idSize`, `quanti
 (568, 57, 2, 4, 107, 1, ''),
 (569, 57, 10, 1, 97, 1, ''),
 (570, 57, 10, 2, 110, 1, ''),
-(571, 57, 10, 3, 113, 1, ''),
+(571, 57, 10, 3, 112, 1, ''),
 (572, 57, 10, 4, 95, 1, ''),
 (573, 58, 1, 1, 119, 1, ''),
 (574, 58, 1, 2, 134, 1, ''),
@@ -1063,7 +1076,7 @@ ALTER TABLE `tbl_color`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_infomation`
@@ -1075,19 +1088,19 @@ ALTER TABLE `tbl_infomation`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_orderdetail`
 --
 ALTER TABLE `tbl_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `tbl_productdetail`
