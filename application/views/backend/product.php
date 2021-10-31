@@ -85,11 +85,11 @@
                                                     <?php } else { ?>
                                                         <td><img src="<?= base_url() ?><?= $value['image']?>" style="width: 68px; height: 100px;;" alt=""></td>
                                                     <?php } ?>
-                                                    <td><?= $value['price'] ?> VND</td>
+                                                    <td><?= number_format($value['price'],0,',','.') ?> VND</td>
                                                     <?php if ($value['sale'] == 0){ ?>
                                                         <td><strong></strong></td>
                                                     <?php } else { ?>
-                                                        <td><strong><?= $value['sale'] ?> VND</strong></td>
+                                                        <td><strong><?= number_format($value['sale'],0,',','.') ?> VND</strong></td>
                                                     <?php } ?>
                                                     <td><?= $value['dateCreate'] ?></td>
                                                     <td><?= $value['modifyBy'] ?></td>

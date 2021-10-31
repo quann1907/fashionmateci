@@ -3,25 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product_model extends CI_Model {
 
-	public function getProductClient()
+	/*------------------------------Admin------------------------------*/
+
+	public function countProductAdmin()
 	{
-		$this->db->select('tbl_product.id as id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
-		$this->db->where('tbl_product.status', 1);
-		$this->db->where('tbl_category.status', 1);
-		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
-		$this->db->order_by('price', 'asc');
-		return $this->db->get('tbl_product')->result_array();
+		return count($this->db->get('tbl_product')->result_array());
 	}
 
-	public function getNewProduct()
+	public function getProductAdmin()
 	{
-		$quantity = 6;
-		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
-		$this->db->where('tbl_product.status', 1);
-		$this->db->where('tbl_category.status', 1);
-		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
-		$this->db->order_by('tbl_product.dateCreate', 'desc');
-		return $this->db->get('tbl_product', $quantity)->result_array();
+		return $this->db->get('tbl_product')->result_array();
 	}
 
 	// public function getProductByType($type)
@@ -35,9 +26,9 @@ class Product_model extends CI_Model {
 	// 	return $this->db->get('tbl_product')->result_array();
 	// }
 
-	public function count_product()
+	public function addProduct($data)
 	{
-		return count($this->db->get('tbl_product')->result_array());
+		return $this->db->insert('tbl_product', $data);
 	}
 
 	public function changeStatus($id, $status)
@@ -61,12 +52,28 @@ class Product_model extends CI_Model {
 		return $this->db->get('tbl_productdetail')->result_array();
 	}
 
-	public function getProductAdmin()
+	/*------------------------------Client------------------------------*/
+
+	public function getNewProduct()
 	{
-		return $this->db->get('tbl_product')->result_array();
+		$quantity = 6;
+		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
+		$this->db->where('tbl_product.status', 1);
+		$this->db->where('tbl_category.status', 1);
+		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
+		$this->db->order_by('tbl_product.dateCreate', 'desc');
+		return $this->db->get('tbl_product', $quantity)->result_array();
 	}
 
-	/*--------------------Client--------------------*/
+	public function getProductClient()
+	{
+		$this->db->select('tbl_product.id as id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
+		$this->db->where('tbl_product.status', 1);
+		$this->db->where('tbl_category.status', 1);
+		$this->db->join('tbl_category', 'tbl_category.id = idCategory');
+		$this->db->order_by('price', 'asc');
+		return $this->db->get('tbl_product')->result_array();
+	}
 
 	public function getProductByID($id)
 	{
@@ -123,6 +130,23 @@ class Product_model extends CI_Model {
 		$this->db->where('sale !=', 0);
 		$this->db->where('tbl_product.status', 1);
 		$this->db->order_by('sale', 'asc');
+		return $this->db->get('tbl_product', $limit, $offset)->result_array();
+	}
+
+	public function countProductSearch($name)
+	{
+		$this->db->like('name', $name);
+		$this->db->where('status', 1);
+		return $this->db->get('tbl_product')->num_rows();
+	}
+
+	public function searchProduct($name, $limit, $offset)
+	{
+		$this->db->like('tbl_product.name', $name);
+		$this->db->select('tbl_product.id, tbl_product.name as a, tbl_category.name as b, image, price, sale');
+		$this->db->join('tbl_category', 'tbl_category.id = tbl_product.idCategory');
+		$this->db->where('tbl_product.status', 1);
+		$this->db->order_by('price', 'asc');
 		return $this->db->get('tbl_product', $limit, $offset)->result_array();
 	}
 }

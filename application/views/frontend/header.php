@@ -2,8 +2,8 @@
     <p class="h-logo">
         <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/img/logo.png" alt="MultiShop"></a>
     </p><div class="h-shop">
-        <form method="get" action="#" class="h-search" id="h-search">
-            <input type="text" placeholder="Search...">
+        <form method="post" action="<?= base_url() ?>Product/searchProduct" class="h-search" id="h-search">
+            <input type="text" placeholder="Search..." name="key">
             <button type="submit"><i class="ion-search"></i></button>
         </form>
         <ul class="h-shop-links">
@@ -21,12 +21,13 @@
                 <ul class="h-profile-links">
                     <?php if(!isset($_SESSION['customer'])){ ?>
                         <li><a href="<?= base_url()?>Login">Đăng nhập</a></li>
+                        <li><a href="<?= base_url()?>Login/loadRegister">Đăng kí</a></li>
                         <li><a href="<?= base_url()?>Home/loadCart">Giỏ hàng</a></li>
                     <?php } else { ?>
-                        <li><a href="">Hồ sơ cá nhân</a></li>
+                        <li><a href="<?= base_url()?>Customer/loadEditCustomer/<?= $this->session->userdata('customer')['id'] ?>">Hồ sơ cá nhân</a></li>
                         <li><a href="<?= base_url()?>Home/loadCart">Giỏ hàng</a></li>
-                        <li><a href="">Lịch sử đặt hàng</a></li>
-                        <li><a href="<?= base_url()?>Login/logout">Logout</a></li>
+                        <li><a href="<?= base_url()?>Order/history">Lịch sử đặt hàng</a></li>
+                        <li><a href="<?= base_url()?>Login/logout">Đăng xuất</a></li>
                     <?php } ?>
                 </ul>
             </li>

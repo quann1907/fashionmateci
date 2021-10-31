@@ -6,6 +6,8 @@ class Order extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Information_model');
+		$this->load->model('Category_model');
 		$this->load->model('ProductDetail_model');
 		$this->load->model('Order_model');
 		$this->load->model('OrderDetail_model');
@@ -51,6 +53,24 @@ class Order extends CI_Controller {
 		} catch (Exception $e) {
 			echo "<script>alert('Lỗi!!')</script>";
 		}
+	}
+
+	public function history()
+	{
+		$detail = [];
+		$idCustomer = $_SESSION['customer']['id'];
+		$idOrder = $this->Order_model->getOrderID($idCustomer);
+		foreach ($idOrder as $value) {
+			$history = $this->Order_model->history($idCustomer, $value['id']);
+			$result['orderDetail'] = $this->OrderDetail_model->getOrderDetail($value['id']);
+			$result['history'] = $history;
+			array_push($detail, $result);
+		}
+		$data['detail'] = $detail;
+		// echo "<pre>";
+		// var_dump($data);
+		// echo "<pre>";
+		$this->load->view('frontend/order-history', $data);
 	}
 }
 

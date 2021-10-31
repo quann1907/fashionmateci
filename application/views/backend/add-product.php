@@ -53,7 +53,7 @@
 								<h4 class="card-title">Thêm dữ liệu sản phẩm</h4>
 							</div>
 							<div class="card-body">
-								<form action="<?= base_url() ?>admin/User/addUser" method="POST" enctype="multipart/form-data">
+								<form action="<?= base_url() ?>admin/Product/addProduct" method="POST" enctype="multipart/form-data">
 									<div>
 										<div class="col-lg-12 mb-2">
 											<div class="form-group">
@@ -66,6 +66,9 @@
 												<label class="text-label"><strong>Mã danh mục sản phẩm</strong></label>
 												<select class="form-control" id="inlineFormCustomSelect" name="idCategory">
 													<option selected>Chọn..</option>
+													<?php foreach ($category as $value): ?>
+														<option value='<?= $value['id'] ?>'><?= $value['name'] ?></option>
+													<?php endforeach ?>
 												</select>
 											</div>
 										</div>

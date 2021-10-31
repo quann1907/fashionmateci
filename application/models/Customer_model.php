@@ -45,6 +45,17 @@ class Customer_model extends CI_Model {
 		$this->db->update('tbl_customer');
 	}
 
+	public function register($data)
+	{
+		return $this->db->insert('tbl_customer', $data);
+	}
+
+	public function checkUsername($username)
+	{
+		$this->db->where('username', $username);
+		return $this->db->get('tbl_customer')->result_array();
+	}
+
 }
 
 /* End of file Customer_model.php */

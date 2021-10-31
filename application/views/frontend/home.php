@@ -19,9 +19,9 @@
                 <main id="main" class="site-main">
                     <div class="maincont page-styling page-full">
                         <div class="heroblock" style="background-image: url(<?= base_url() ?>assets/img/slider.png)">
-                            <p class="heroblock-subttl"><a href="catalog-gallery.html">Store</a></p>
+                            <p class="heroblock-subttl"><a href="<?= base_url() ?>Product">Store</a></p>
                             <h3 class="heroblock-ttl">Free Shipping Anywhere</h3>
-                            <a href="catalog-gallery.html" class="btn">Read More</a>
+                            <a href="<?= base_url() ?>Product" class="btn">Read More</a>
                         </div>
                         <div class="container mb60 page-styling row-wrap-container row-wrap-nottl">
                             <h3 class="mb35" style="color:#6bc67c; font-family:Montserrat;">SẢN PHẨM MỚI</h3>

@@ -77,8 +77,8 @@
                                                     <td><img src="<?= base_url() ?><?= $value['image']?>" style="width: 50px; height: 68px;;" alt=""></td>
                                                     <td><?= $value['color'] ?></td>
                                                     <td><?= $value['size'] ?></td>
-                                                    <td><strong><?= $value['price'] ?> VND</strong></td>
-                                                    <td><strong><?= $value['sale'] ?> VND</strong></td>
+                                                    <td><strong><?= number_format($value['price'], 0, ',', '.') ?> VND</strong></td>
+                                                    <td><strong><?= number_format($value['sale'], 0, ',', '.') ?> VND</strong></td>
                                                     <td><?= $value['quantity'] ?></td>
                                                 </tr>
                                             <?php endforeach ?>

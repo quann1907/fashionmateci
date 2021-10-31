@@ -73,7 +73,7 @@
                                                     <td><strong><?= $value['id'] ?></strong></td>
                                                     <td><?= $value['fullname'] ?></td>
                                                     <td><?= $value['orderDate'] ?></td>
-                                                    <td><?= $value['money'] ?></td>
+                                                    <td><?= number_format($value['money'], 0, ',', '.') ?></td>
                                                     <td><?= $value['estimateDeliveryDate'] ?></td>
                                                     <?php
                                                     if ($value['status'] == 0){

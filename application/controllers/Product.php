@@ -129,6 +129,54 @@ class Product extends CI_Controller {
 
 		$this->load->view('frontend/product', $data);
 	}
+
+    public function searchProduct()
+    {
+        $search = $this->input->post('key');
+        if ($search == null){
+            $search = $this->uri->segment(3);
+        }
+        $config = [
+            'base_url' => base_url().'Product/searchProduct/'.$search,
+            'per_page' => 6,
+            'total_rows' => $this->Product_model->countProductSearch($search),
+            'uri_segment' => 4,
+            'attributes' => array('class' => 'page-numbers'),
+        ];
+
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li><span class="page-numbers current">';
+        $config['cur_tag_close'] = '</span></li>';
+
+        $config['next_link'] = '>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] =  '<';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['first_link'] = '<<';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link'] = '>>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li><br>';
+        
+        $this->pagination->initialize($config);
+        
+        $pagination = $this->pagination->create_links();
+        $uri_seg = $this->uri->segment(4);
+
+        $data_product=$this->Product_model->searchProduct($search, 6, $uri_seg);
+        $data['product'] = $data_product;
+        $data['pagination'] = $pagination;
+
+        $this->load->view('frontend/product', $data);
+    }
 }
 
 /* End of file Product.php */

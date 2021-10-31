@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('loggedIn')) {
-			$data['product'] = $this->Product_model->count_product();
+			$data['product'] = $this->Product_model->countProductAdmin();
 			$data['count_pending_order'] = $this->Order_model->count_pending_order();
 			$data['count_customer'] = $this->Customer_model->count_customer();
 			$this->load->view('backend/dashboard', $data);	

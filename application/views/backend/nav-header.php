@@ -1,5 +1,5 @@
 <div class="nav-header">
-    <a href="" class="brand-logo">
+    <a href="<?= base_url() ?>admin" class="brand-logo">
         <img class="logo-abbr" src="<?= base_url() ?>dist/images/logo.png" alt="">
         <img class="brand-title" src="<?= base_url() ?>dist/images/logo-text.png" alt="">
     </a>
